@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paris — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Paris</h1><p>15 tours, monument entries and attractions, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+['eiffel-tower','Eiffel Tower — Stairs, Lift & Summit','Four ticket options, stairs to summit','Monument','Eiffel_Tower','1.5–3 hrs','Open daily',14.80,'€14.80'],
+['seine-river-cruise','Seine River Sightseeing Cruise','1-hour river cruise past Paris landmarks','Tour','Seine','60–75 min','No closed day; seasonal timetable',17,'€17 (verify)'],
+['louvre-museum','Louvre Museum','Mona Lisa & 35,000 works','Museum','Louvre','3–4 hrs','Closed Tuesdays',32,'€32 (non-EEA)'],
+['versailles','Palace of Versailles (Passport)','Hall of Mirrors, gardens & Trianon','Day trip','Palace_of_Versailles','4–7 hrs','Palace closed Mondays — Verify',35,'€35 (non-EEA, high season)'],
+['orsay-museum','Musée d’Orsay','Impressionist masterpieces','Museum','Musée_d\'Orsay','2–3 hrs','Closed Mondays — Verify',16,'€16'],
+['arc-de-triomphe','Arc de Triomphe — Rooftop','Rooftop views over 12 avenues','Monument','Arc_de_Triomphe','45–60 min','Verify; may close for ceremonies',22,'€22 (high season)'],
+['sainte-chapelle','Sainte-Chapelle','Gothic stained-glass jewel','Monument','Sainte-Chapelle','45 min','Typically closed 1 Jan, 1 May, 25 Dec — Verify',22,'€22 (non-EEA)'],
+['notre-dame','Notre-Dame de Paris','Restored Gothic cathedral','Free','Notre-Dame_de_Paris','30–60 min','Verify; services restrict access',0,'Free · Towers €16'],
+['catacombs','Catacombs of Paris','Underground ossuary tunnels','Monument','Catacombs_of_Paris','45–90 min','Typically closed Mondays — Verify',31,'€31'],
+['montmartre-sacre-coeur','Sacré-Cœur & Montmartre Walk','Village streets & basilica views','Free','Sacré-Cœur,_Paris','1.5–3 hrs','Verify',0,'Free basilica'],
+['paris-museum-pass','Paris Museum Pass (2 / 4 / 6 days)','50+ museums and monuments','Pass','Paris','2, 4 or 6 days','Follows each venue’s closures',85,'€85 (2-day)'],
+['montparnasse-tower','Montparnasse Tower — 56th Floor','Observatory closed for renovation','Monument','Montparnasse_Tower','—','Closed since 31 March 2026',null,'Closed'],
+['seine-dinner-cruise','Seine Lunch & Dinner Cruises','Meal cruises on the Seine','Tour','Bateaux_Mouches','1–2h15','Smart dress for dinner',null,'Verify'],
+['batobus','Batobus Hop-On Hop-Off Seine Boat','24h or 2-day river pass','Tour','Batobus','24h / 48h pass','Seasonal timetable',23,'€23 (1-day)'],
+['paris-by-night','Paris by Night — Bus Tour + Seine Cruise','Cruise plus night bus tour','Tour','Paris','2h40 combined','Verify before booking',null,'Verify']];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · €'+(d[7]*RATE).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
