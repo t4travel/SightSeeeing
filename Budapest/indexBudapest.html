@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budapest — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Budapest</h1><p>15 tours, monuments, a thermal bath, cruises, day trips and a city pass, with closed days and what's included. Prices are in Hungarian forint (HUF) unless stated.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+["parliament","Hungarian Parliament Building — Guided Visit","45-minute timed visit: Grand Staircase, Dome Hall and the Holy Crown","Monument","Hungarian_Parliament_Building","45–60 min","Closed on session days — Verify",14000,"HUF 14,000 (non-EEA adult)"],
+["buda-castle-matthias-church","Buda Castle District & Matthias Church Walk","Hilltop streets, the tiled-roof church and Danube views","Monument","Matthias_Church","2–2.5 hrs","Church closed during services — Verify",null,"Free streets · Church ticket Verify"],
+["fishermans-bastion","Fisherman’s Bastion — Terraces & Upper Towers","Seven neo-Romanesque towers with the best view of Parliament","Monument","Fisherman's_Bastion","30–45 min","Open 24 hours; upper towers ticketed by day",1700,"Free · Upper towers HUF 1,700 (verify)"],
+["szechenyi-bath","Széchenyi Thermal Bath — Day Entry","Neo-baroque spa with 18 pools in City Park","Attraction","Széchenyi_thermal_bath","3–4 hrs","Open daily; occasional closures — Verify",10500,"From HUF 10,500 (verify)"],
+["dohany-synagogue","Dohány Street Synagogue & Jewish Quarter","Europe’s largest synagogue, museum and memorial gardens","Monument","Dohány_Street_Synagogue","1.5–2 hrs","Saturdays and Jewish holidays",null,"HUF 9,051–14,500 (verify)"],
+["danube-river-cruise","Danube River Sightseeing Cruise (Audio Guide)","60–70 minute day, sunset or night cruise past Parliament and the bridges","Tour","Danube","60–70 min","Weather and water-level dependent",null,"Operator-priced (verify)"],
+["danube-dinner-cruise","Danube Dinner Cruise with Live Music & Folk Dance","Three-course dinner and a Hungarian show on the river","Tour","Széchenyi_Chain_Bridge","2–2.5 hrs","Weather dependent",null,"Operator-priced (verify)"],
+["grand-city-tour-parliament","Half-Day Grand City Tour with Parliament Visit","Coach sightseeing plus a timed Parliament entry","Tour","Heroes'_Square_(Budapest)","3–4 hrs","Parliament closed on some days — Verify",null,"From about €65 (reseller, verify)"],
+["tuk-tuk-tour","Private Tuk-Tuk Tour with Hotel Pickup","Custom route through Castle Hill, Andrássy and the river","Tour","Budapest","2–4 hrs","Weather dependent",null,"Quote on request"],
+["free-walking-tour","Free Walking Tour — Historical Budapest","Two to three hours through the old centre, tip-based","Free","Budapest","2–3 hrs","No closed day",0,"Free (tip-based)"],
+["chain-bridge-heroes-square","Chain Bridge & Heroes’ Square","Two free landmarks, one on the river and one at City Park","Free","Széchenyi_Chain_Bridge","45–60 min each","Open 24 hours",0,"Free"],
+["budapest-card","Budapest Card — 24, 48, 72 & 96 Hours","Public transport, a free Lukács bath entry and discounts","Pass","Budapest","24–96 hrs","Follows each venue’s closures",17990,"From HUF 17,990 (24 hrs)"],
+["danube-bend-day-trip","Danube Bend Day Trip — Szentendre, Visegrád & Esztergom","Three riverside towns in a full day from Budapest","Day trip","Danube_Bend","8–10.5 hrs","Site closures vary — Verify",null,"From about €90 (reseller, verify)"],
+["vienna-day-trip","Vienna Day Trip from Budapest","Private full-day trip with Schönbrunn and the old town","Day trip","Vienna","About 10 hrs","Check Vienna venues",null,"Private from €1,090 per car (reseller)"],
+["christmas-markets","Budapest Christmas Markets 2026","Vörösmarty tér and St Stephen’s Basilica, mid-November to New Year","Attraction","Vörösmarty_Square","1–3 hrs","Season runs mid-Nov to 31 Dec / 1 Jan",0,"Free entry · Dates Verify"]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · HUF '+Math.round(d[7]*RATE).toLocaleString('en-US')+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
