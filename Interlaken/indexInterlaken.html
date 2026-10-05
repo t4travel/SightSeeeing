@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Copenhagen — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Copenhagen</h1><p>31 tours, palaces, museums, passes and day trips, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+["jungfraujoch", "Jungfraujoch — Top of Europe", "Europe's highest railway station at 3,454 m, with the Aletsch Glacier, Ice Palace and Sphinx platform", "Attraction", "Jungfraujoch", "Full day (about 6–8 hrs)", "Open daily; weather dependent", 224.4, "CHF 224.40 (Nov–Apr) · 261.20 (May–Oct)"],
+["schilthorn-piz-gloria", "Schilthorn — Piz Gloria", "Revolving 360° restaurant at 2,970 m with Eiger, Mönch and Jungfrau views and the James Bond story", "Attraction", "Schilthorn", "4–5 hrs", "Open year-round; maintenance closures", 91.4, "CHF 91.40 from Mürren"],
+["grindelwald-first", "Grindelwald First & Cliff Walk", "Gondola to First, the Cliff Walk by Tissot, Bachalpsee and adventure rides", "Attraction", "Grindelwald", "2–5 hrs", "Summer operation to 25 Oct 2026", 76, "CHF 76 (Verify)"],
+["schynige-platte", "Schynige Platte — Cogwheel Railway & Alpine Garden", "Nostalgic cogwheel railway from Wilderswil with the Eiger, Mönch and Jungfrau panorama", "Attraction", "Schynige_Platte", "3.5–6 hrs", "Season ends 25 Oct 2026", 68, "CHF 68"],
+["harder-kulm", "Harder Kulm — Interlaken's Local Mountain", "Funicular and Two Lakes Bridge above Interlaken", "Attraction", "Harder_Kulm", "1.5–3 hrs", "Seasonal — Verify dates", 38, "CHF 38–44"],
+["lake-cruise-thun-brienz", "Lake Thun & Lake Brienz Boat Cruises", "BLS day pass on two turquoise lakes with paddle steamers and Giessbach Falls", "Tour", "Lake_Brienz", "2–6 hrs", "Lake Brienz boats to 6 Dec 2026", 35, "From CHF 35 · Day pass about CHF 119 (Verify)"],
+["ballenberg-open-air-museum", "Ballenberg Swiss Open-Air Museum", "100+ historic buildings, craft demonstrations and farm animals near Brienz", "Museum", "Ballenberg", "3–5 hrs", "Season ends 1 Nov 2026", 32, "CHF 32"],
+["st-beatus-caves", "St. Beatus Caves", "Guided cave path, caves museum and views of Lake Thun above Sundlauenen", "Attraction", "St._Beatus_Caves", "2–4 hrs", "Season ends 8 Nov 2026", 20, "From CHF 20"],
+["trummelbach-falls", "Trümmelbach Falls", "Ten glacier waterfalls inside the mountain, reached by a tunnel lift in the Lauterbrunnen valley", "Attraction", "Trümmelbach_Falls", "1–2 hrs", "Closes early Nov", 18, "CHF 18"],
+["brienzer-rothorn", "Brienzer Rothorn — Steam Cogwheel Railway", "Steam rack railway from Brienz to 2,350 m, over 690 peaks and turquoise Lake Brienz", "Attraction", "Brienzer_Rothorn", "4–6 hrs", "Season 6 Jun – 25 Oct 2026", 98, "CHF 98 (CHF 49 with pass)"],
+["lucerne-day-trip", "Lucerne Day Trip from Interlaken", "Chapel Bridge, Lion Monument and the old town, by the scenic Luzern–Interlaken Express", "Day trip", "Lucerne", "Full day", "Open daily", 0, "Free (sights)"],
+["mount-titlis", "Mount Titlis — Glacier Cliff Walk", "Rotating cable car to 3,020 m, Europe's highest suspension bridge and the glacier cave", "Day trip", "Mount_Titlis", "Full day", "Open all year except maintenance", null, "CHF 102–108 (Verify)"],
+["mount-pilatus", "Mount Pilatus — Golden Round Trip", "Boat, world's steepest cogwheel railway, cable car and gondola in a loop from Lucerne", "Day trip", "Pilatus", "5–7 hrs plus travel", "Golden Round Trip ends 18 Oct 2026", null, "From CHF 42 with Swiss Travel Pass"],
+["glacier-3000", "Glacier 3000 — Peak Walk by Tissot", "Cable car to 3,000 m near Gstaad with the Peak Walk suspension bridge", "Day trip", "Glacier_3000", "Full day", "Open all year except maintenance", 89, "CHF 89"],
+["zermatt-matterhorn", "Zermatt & Matterhorn — Gornergrat", "Car-free Zermatt and the cogwheel train to Gornergrat at 3,089 m", "Day trip", "Matterhorn", "Full day", "Open all year", 96, "CHF 96–132"],
+["bern-day-trip", "Bern — Old Town, Zytglogge & Bear Park", "UNESCO old town, the Zytglogge clock tower, Bear Park, Rose Garden and free Parliament tours, 1 hour from Interlaken", "Day trip", "Bern", "Half to full day", "Open daily", 0, "Free (sights)"],
+["montreux-chillon", "Montreux, Chillon Castle & GoldenPass Express", "Direct panoramic train to Lake Geneva, the water castle of Chillon and the Montreux promenade", "Day trip", "Chillon_Castle", "Full day (overnight advised)", "Castle closed 1 Jan and 25 Dec — Verify", null, "Chillon CHF 13.50–15 (Verify)"],
+["lindt-home-of-chocolate", "Lindt Home of Chocolate, Kilchberg", "Chocolate museum, 9 m chocolate fountain and the world's largest Lindt shop near Zurich", "Day trip", "Kilchberg,_Zürich", "2–3 hrs plus travel", "Verify", 17, "CHF 17"],
+["maison-cailler", "Maison Cailler Chocolate Factory, Broc", "Swiss chocolate factory and museum with tastings and workshops near Gruyères", "Day trip", "Cailler", "1.5–2 hrs plus travel", "Closed 25 Dec 2026", 17, "CHF 17"],
+["swiss-travel-pass", "Swiss Travel Pass & Half Fare Card", "Unlimited trains, buses and boats, with 50% off most mountain railways", "Pass", "Rail_transport_in_Switzerland", "3–15 days", "Not applicable", 254, "From CHF 254 (3 days)"],
+["jungfrau-travel-pass", "Jungfrau Travel Pass", "Unlimited travel in the Jungfrau region, with a special Jungfraujoch fare", "Pass", "Jungfrau_Region", "3–8 days", "Not applicable", 165, "From CHF 165"],
+["interlaken-guest-card", "Interlaken Guest Card", "Free card from your host with local transport and discounts", "Pass", "Interlaken", "During your stay", "Not applicable", 0, "Free from your host"],
+["paragliding-interlaken", "Tandem Paragliding over Interlaken", "Tandem flight from Beatenberg over Lake Thun with a certified pilot", "Tour", "Paragliding", "About 1.5 hrs", "Weather dependent", 190, "From CHF 190"],
+["adventure-activities-interlaken", "Adventure Activities — Canyoning, Rafting, Jet Boat & Bungee", "Canyoning, Lütschine rafting, canyon swing, jet boat and Stockhorn bungee with Interlaken operators", "Tour", "Interlaken", "1–4 hrs", "Seasonal; weather dependent", 40, "From CHF 40 (Verify)"],
+["skydive-interlaken", "Skydiving over Interlaken — Helicopter & High-Altitude HALO Jump", "Tandem helicopter skydives with Skydive Interlaken, from 14,000 ft to a private 18,000 ft HALO jump", "Tour", "Skydiving", "2–3 hrs", "Weather dependent; ideal Mar–Oct", 490, "From CHF 490"],
+["rhine-falls", "Rhine Falls & Schaffhausen Day Trip", "Europe's largest waterfall by volume, Laufen Castle viewpoints and a boat into the basin", "Day trip", "Rhine_Falls", "Full day", "Boat season about Apr–Oct", null, "Boat about CHF 10–25 (Verify)"],
+["mount-rigi", "Mount Rigi — Queen of the Mountains", "Europe's first mountain railway, free with the Swiss Travel Pass, 1 hr from Lucerne", "Day trip", "Rigi", "Full day", "Open 365 days", 78, "CHF 78 (free with Swiss Travel Pass)"],
+["oeschinensee-kandersteg", "Oeschinensee — Kandersteg Gondola & Lake", "Gondola above Kandersteg to a turquoise mountain lake with toboggan run and rowing boats", "Attraction", "Oeschinen_Lake", "4–6 hrs", "Time slot needed 20 Jun – 20 Sep 2026", 36, "CHF 36–40"],
+["niederhorn-beatenberg", "Niederhorn — Beatenberg Gondola & Evening Rides", "Funicular and gondola above Lake Thun with Eiger views, Rocky the ibex trail and Friday–Saturday evening rides", "Attraction", "Niederhorn", "3–5 hrs", "Season 1 May – 15 Nov 2026; Verify gondola", 31, "Evening ride from CHF 31"],
+["niesen-swiss-pyramid", "Niesen — Funicular to the Swiss Pyramid", "Two-section funicular to 2,362 m beside the world's longest staircase, above Lake Thun", "Attraction", "Niesen", "Half day", "Season 25 Apr – 8 Nov 2026", 64, "CHF 64 (Verify)"],
+["gruyeres-cheese-castle", "Gruyères Cheese Dairy & Castle", "Demonstration cheese dairy at La Maison du Gruyère, medieval castle and old town", "Day trip", "Gruyères", "3–4 hrs plus travel", "Open every day", 8, "From CHF 8"]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · CHF '+(d[7]*RATE).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
