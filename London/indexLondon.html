@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>London — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>London</h1><p>51 tours, royal sites, attractions and day trips, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+["tower-of-london", "Tower of London — Crown Jewels & Beefeater Tour", "Crown Jewels, White Tower, Beefeater tour included", "Monument", "Tower_of_London", "2.5–3 hrs", "Closed 24–26 Dec, 1 Jan", 37, "£37", 0.075],
+["westminster-abbey", "Westminster Abbey — Entry with Multimedia Guide", "Coronation church, Poets' Corner, royal tombs", "Monument", "Westminster_Abbey", "1.5–2 hrs", "Closed to visitors on Sundays", 31, "£31", 0.05],
+["buckingham-palace", "Buckingham Palace State Rooms — Summer Opening", "State Rooms and garden, open each summer", "Monument", "Buckingham_Palace", "2–2.5 hrs", "State Rooms open in summer only; 2027 dates Verify", 33, "£33 (summer opening only)", 0.05],
+["st-pauls-cathedral", "St Paul's Cathedral — Entry & Dome Climb", "Whispering Gallery, Golden Gallery and crypt", "Monument", "St_Paul's_Cathedral", "1.5–2.5 hrs", "Closed to visitors on Sundays", 27, "£27", 0.075],
+["churchill-war-rooms", "Churchill War Rooms — Entry Ticket", "Churchill's underground WWII command bunker", "Museum", "Churchill_War_Rooms", "1.5–2 hrs", "Closed 24–26 Dec", 34, "£34", 0.075],
+["warner-bros-studio-tour", "Warner Bros. Studio Tour London — The Making of Harry Potter", "Studio entry with coach from central London", "Day trip", "Warner_Bros._Studio_Tour_London", "7–8 hrs", "Open daily; some maintenance days", 125, "£125 package · £71 transport only", 0.1],
+["london-eye-merlin", "London Eye & Merlin Attractions", "Eye ride and multi-attraction passes", "Attraction", "London_Eye", "30 min to a full day", "Rarely closed; January maintenance days", 39, "From £39 · Fast Track £54", 0.075],
+["thames-river-cruises", "Thames River Cruises — Sightseeing, Dining & Jazz", "Sightseeing, lunch, tea, dinner and jazz cruises", "Tour", "River_Thames", "1–3 hrs", "Operates daily", 11.4, "From £11.40 · Dinner from £95", 0.075],
+["hop-on-hop-off-bus", "Hop-on Hop-off London Bus & Afternoon Tea Bus", "24–72 hour bus passes, Routemaster and tea bus", "Tour", "London", "Flexible, all day", "Runs daily", 35, "From £35", 0.1],
+["british-museum-tour", "British Museum — Guided Tour & Afternoon Tea", "Free entry; guided tour and tea add-ons", "Museum", "British_Museum", "1.5–2 hrs", "Closed 1 Jan, 24–26 Dec", 43, "Free entry · Tea £43 · Guided £52", 0.075],
+["tower-bridge", "Tower Bridge Exhibition", "Glass-floor walkway and engine rooms", "Attraction", "Tower_Bridge", "1 hr", "Open daily", 18, "£18", 0.075],
+["windsor-stonehenge-day-trip", "Windsor Castle & Stonehenge Day Trip from London", "Full-day coach trip, four tiers", "Day trip", "Stonehenge", "9–12 hrs", "Windsor Castle closed on some days — Verify", 89, "From £89", 0.1],
+["legoland-windsor", "LEGOLAND Windsor — Entry & Transport Package", "Park entry, or entry with return transport", "Day trip", "Legoland_Windsor_Resort", "Full day", "Seasonal; 2026 main season ends about 1 Nov", 42, "From £42 · With transport £84", 0.075],
+["kensington-kew-hampton", "Kensington Palace, Kew Gardens & Hampton Court Palace", "Three royal sites, ticketed separately", "Attraction", "Kensington_Palace", "1.5–3 hrs per site", "Each site has its own closed days — Verify", 22, "From £22 · Hampton Court £29", 0.075],
+["globe-theatre-west-end", "Shakespeare's Globe Tour & West End Theatre Tickets", "Globe tour and West End show tickets", "Attraction", "Shakespeare's_Globe", "45 min Globe; 2.5–3 hrs show", "Globe tours daily; shows by production", 28, "Globe tour £28 · Shows on quote", 0.075],
+["ghost-tours", "London Ghost Tours — Jack the Ripper Walk & Ghost Bus", "Evening walking tour and ghost bus", "Tour", "Jack_the_Ripper", "1.5–2 hrs", "Runs daily", 19, "From £19", 0.075],
+["bath-stonehenge-cotswolds", "Bath, Stonehenge & Cotswolds Day Trips", "Roman Baths, Stonehenge and Cotswolds villages", "Day trip", "Roman_Baths_(Bath)", "10–11 hrs", "Daily Apr–Oct; four days a week Nov–Mar", 89, "From £89", 0.1],
+["oxford-cambridge-day-trips", "Oxford, Cambridge & Harry Potter Day Trips", "University towns and Harry Potter locations", "Day trip", "Oxford", "10–12 hrs", "Colleges close for exams and events — Verify", 99, "From £99", 0.1],
+["stratford-warwick-castle", "Stratford-upon-Avon, Warwick Castle & Cotswolds", "Shakespeare's birthplace and a medieval castle", "Day trip", "Warwick_Castle", "11–12 hrs", "Daily Apr–Oct; five days a week Nov–Mar", 89, "From £89", 0.1],
+["leeds-castle-canterbury-dover", "Leeds Castle, Canterbury & White Cliffs of Dover", "Kent day trip with Greenwich and cruise in season", "Day trip", "Leeds_Castle", "11–12 hrs", "Full route Apr–Oct; winter route Mon, Tue, Thu, Sat", 124, "£124 winter · £134 Apr–Oct", 0.1],
+["edinburgh-day-trip-overnight", "Edinburgh by Rail — Day Trip & Overnight", "Standard or First Class rail, with overnight option", "Day trip", "Edinburgh", "Full day or 2 days", "Overnight not running August 2026", 219, "Day trip £219 · Overnight £359", 0.1],
+["york-day-trip", "York Day Trip by Rail with Hop-on Hop-off", "Rail trip with York hop-on hop-off included", "Day trip", "York", "Full day", "Weekdays only (Mon–Fri)", 129, "£129", 0.1],
+["liverpool-beatles-day-trip", "Liverpool & The Beatles by Rail", "Standard or First Class rail day trip", "Day trip", "Liverpool", "Full day", "Not running Sundays", 194, "From £194", 0.1],
+["lake-district-day-trip", "Lake District Day Trip by Rail", "Windermere and the fells by rail", "Day trip", "Lake_District", "Full day", "Weekdays only (Mon–Fri)", 339, "From £339", 0.1],
+["paris-eurostar-day-trip", "Paris Day Trip by Eurostar", "Escorted and free-and-easy Paris day trips", "Day trip", "Eurostar", "Full day", "Escorted trips run on set days; Sundays excluded", 189, "From £189 · Escorted £399", 0.1],
+["private-transfers", "Private Airport & City Transfers", "Per-car transfers from London airports", "Tour", "Heathrow_Airport", "30 min–2 hrs", "Available 24/7", 57, "From £57 per car", 0.1],
+["madame-tussauds-london", "Madame Tussauds London — Standard & Fast Track", "Over 150 wax figures, the Spirit of London ride and the Royal Balcony", "Attraction", "Madame_Tussauds", "About 2 hrs", "Open daily; ride maintenance dates — Verify", 39, "£39 · Fast Track £54", 0.075],
+["london-dungeon", "The London Dungeon", "Live-actor horror history show and rides at County Hall", "Attraction", "London_Dungeon", "About 90 min", "Open daily; Thursday opens later", 26, "From £26 · Peak £30", 0.075],
+["sea-life-london", "SEA LIFE London Aquarium", "Aquarium on the South Bank with shark and ray zones", "Attraction", "Sea_Life_London_Aquarium", "About 1–1.5 hrs", "Open daily; Thursday opens later", 28, "From £28 · Peak £33", 0.075],
+["shrek-adventure-london", "Shrek's Adventure! London", "Walk-through fairytale adventure with Shrek and Donkey", "Attraction", "Shrek's_Adventure!_London", "About 1.5 hrs (Verify)", "Open daily; Thursday opens later", 21, "From £21 · Peak £27", 0.075],
+["view-from-the-shard", "The View from The Shard", "Viewing floors at 244–310 m with an open-air level", "Attraction", "The_Shard", "About 1–1.5 hrs", "Open daily; some irregular closures", null, "Verify · Advance from about £24", 0.075],
+["greenwich-cutty-sark-observatory", "Greenwich — Cutty Sark, Royal Observatory & Day Pass", "Maritime Greenwich World Heritage Site", "Attraction", "Cutty_Sark", "2–5 hrs", "Open daily; closed 24–26 Dec — Verify", 22, "From £22 · Day Pass £38", 0.075],
+["hms-belfast", "HMS Belfast — Entry Ticket", "WWII cruiser moored on the Thames", "Attraction", "HMS_Belfast", "1.5–2 hrs", "Open daily — Verify", 26.35, "£26.35", 0.075],
+["london-stadium-tours", "London Stadium & Cricket Ground Tours — Wembley, Emirates, Oval", "Behind-the-scenes tours at Wembley, Emirates, London Stadium, Fulham and Kia Oval", "Attraction", "Wembley_Stadium", "1–1.5 hrs per tour", "Match days and events change tours", 22, "From £22", 0.075],
+["london-food-tours", "London Food Tours — Borough Market & Brick Lane Indian", "Guided tastings in Borough Market or Brick Lane", "Tour", "Borough_Market", "About 3 hrs (Verify)", "Runs on set dates — Verify", 97.5, "£97.50", 0.075],
+["art-gallery-tours", "London Art Gallery Tours — National Gallery, Tate Britain & Tate Modern", "Official guided highlights tours", "Museum", "National_Gallery", "About 1 hr", "Gallery closed days apply", 20, "From £20 · With tea £65", 0.075],
+["london-walking-tours", "London Walking Tours — Royal London, Covent Garden, Wizard Walk & More", "Guided walks through royal, theatre and Harry Potter London", "Tour", "Covent_Garden", "1.5–2 hrs", "Runs daily", 19, "From £19", 0.075],
+["royal-mews-kings-gallery", "Royal Mews & The King's Gallery", "Royal carriages and Royal Collection exhibitions", "Attraction", "Royal_Mews", "1–1.5 hrs each", "Seasonal opening", 18, "Royal Mews £18", 0.075],
+["ifs-cloud-cable-car", "IFS Cloud Cable Car — Thames Crossing", "Cable car over the Thames between Greenwich Peninsula and Royal Docks", "Attraction", "IFS_Cloud_Cable_Car", "About 10 min each way", "Operates daily; wind closures", 13.5, "£13.50 return", 0.075],
+["black-cab-tour", "Historical London Private Black Cab Tour", "Private tour in a licensed black cab with hotel pickup", "Tour", "Black_cab", "About 2–3 hrs (Verify)", "Runs daily — Verify", 316, "£316 per cab (up to 6)", 0.075],
+["heathrow-express", "Heathrow Express — Paddington Airport Train", "Fast train between Paddington and Heathrow", "Tour", "Heathrow_Express", "About 15–21 min", "Runs daily", 26, "£26 one-way", 0.1],
+["windsor-castle", "Windsor Castle — Entry & Half-Day Tours", "Castle entry ticket or a guided half-day coach trip", "Day trip", "Windsor_Castle", "About 3–5 hrs", "Closed Tue and Wed — Verify", 32, "£32 · Half-day tour £69", 0.075],
+["stonehenge-half-day", "Stonehenge Half-Day Tour from London", "Morning or afternoon coach trip with entry", "Day trip", "Stonehenge", "About 6–7 hrs", "Daily; afternoon departure Apr–Sep", 77, "£77", 0.1],
+["warwick-castle", "Warwick Castle — Entry Tickets", "Medieval castle with live shows and the Castle Dungeon", "Attraction", "Warwick_Castle", "3–5 hrs", "Seasonal closures — Verify", 39, "£39", 0.075],
+["thorpe-park", "Thorpe Park Resort — One-Day Entry", "UK's thrill-ride park, with Fright Nights in autumn", "Day trip", "Thorpe_Park", "Full day", "Open on set dates; closed some midweek days", 42, "From £42", 0.075],
+["chessington-world-of-adventures", "Chessington World of Adventures — One-Day Entry", "Family theme park, zoo and Howl'O'Ween in autumn", "Day trip", "Chessington_World_of_Adventures", "Full day", "Open on set dates; closed some days", 42, "From £42", 0.075],
+["brighton-seven-sisters", "Brighton, Seven Sisters & Royal Pavilion Day Trip", "Coastal day trip with the Royal Pavilion", "Day trip", "Royal_Pavilion", "10–11 hrs", "May–Oct Wed, Fri, Sun", 94, "From £94", 0.1],
+["total-london-experience", "Total London Experience — St Paul's, Cruise, Tower & London Eye", "Full-day coach sightseeing with entries", "Tour", "St_Paul's_Cathedral", "Full day", "Runs daily", 129, "From £129", 0.1],
+["buckingham-palace-packages", "Buckingham Palace Packages — Tours, Stonehenge & Walking Combos", "State Rooms bundled with a London panorama, Stonehenge or a royal walk", "Tour", "Buckingham_Palace", "Half to full day", "Palace open 9 Jul–27 Sep 2026 only", 49, "From £49", 0.05],
+["blenheim-churchill-day-trip", "Churchill War Rooms & Blenheim Palace Day Trip", "Early access to the War Rooms, then Blenheim Palace", "Day trip", "Blenheim_Palace", "Full day", "Apr–Oct Tue, Wed, Sat", 139, "From £139", 0.1],
+["london-windsor-hampton-court-day-trip", "London, Windsor Castle & Hampton Court Palace Day Trip", "Two royal palaces in one coach day", "Day trip", "Hampton_Court_Palace", "Full day", "Apr–Sep Mon, Thu, Sat", 142, "From £142", 0.1]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission '+Math.round((d[9]||RATE)*1000)/10+'% · £'+(d[7]*(d[9]||RATE)).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
