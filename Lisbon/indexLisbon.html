@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lisbon — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Lisbon</h1><p>13 tours, monuments, a city pass, cruises and day trips, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+["sintra-palaces","Sintra Palaces — Pena, Moorish Castle, Regaleira & More","Timed Pena Palace entry and the Parques de Sintra monuments","Monument","Pena_Palace","4–8 hrs","Per-monument closures — Verify",20,"Pena Palace + Park about €20 (verify)"],
+["belem-tower-jeronimos","Belém Tower & Jerónimos Monastery","Two UNESCO landmarks of the Age of Discoveries","Monument","Belém_Tower","2–3 hrs","Closed Mondays",18,"Jerónimos cloister €18 · Belém Tower Verify"],
+["sao-jorge-castle-alfama","São Jorge Castle & Alfama District","Lisbon’s hilltop castle and the oldest quarter below it","Monument","São_Jorge_Castle","2–3 hrs","Open daily from 09:00 — Verify holidays",null,"€15–€17 (verify)"],
+["tram-28-lx-factory","Tram 28 & LX Factory","The historic yellow tram and Lisbon’s creative quarter","Tour","Trams_in_Lisbon","2–3 hrs","Tram runs daily",3.3,"€3.30 on board (cash)"],
+["lisboa-card","Lisboa Card — 24, 48 & 72 Hours","Public transport plus free entry to major museums and monuments","Pass","Lisbon","24–72 hrs","Follows each venue’s closures",null,"€31 / €51 / €62 or €22 / €37 / €47 (verify)"],
+["oceanario-lisbon","Oceanário de Lisboa — Entry Ticket","One of Europe’s largest aquariums at Parque das Nações","Attraction","Lisbon_Oceanarium","1.5–3 hrs","Open daily; reduced hours 24 and 31 Dec",25,"€25 adult"],
+["tagus-sunset-cruise","Tagus River Sunset Cruise","Two hours on the Tagus by sailboat with a welcome drink","Tour","Tagus","2 hrs","Weather dependent",null,"From about €35 (reseller, verify)"],
+["fado-night-dinner","Lisbon by Night with Fado Show & Dinner","Evening tour and a live Fado show with a Portuguese dinner in Alfama","Attraction","Fado","3–4 hrs","Runs most evenings — Verify",null,"About US$102 (reseller, verify)"],
+["sintra-cascais-day-trip","Sintra & Cascais Day Trip from Lisbon","Guided day with Pena Palace, Quinta da Regaleira, Cabo da Roca and Cascais","Day trip","Cabo_da_Roca","8–9 hrs","Per-monument closures — Verify",null,"€35–€65 (reseller, verify)"],
+["fatima-nazare-obidos-day-trip","Fátima, Nazaré & Óbidos Day Trip","A pilgrimage site, a surf town and a medieval walled village","Day trip","Fátima,_Portugal","8.5–9 hrs","Site closures vary — Verify",null,"€44–€97 (reseller, verify)"],
+["evora-day-trip","Évora Day Trip from Lisbon","A walled Roman and medieval city in the Alentejo","Day trip","Évora","9–11 hrs","Sites vary — Verify",null,"Small group €70–€120 (guide, verify)"],
+["porto-day-trip-by-train","Porto Day Trip from Lisbon by Train","Alfa Pendular train, about 2h40 each way","Day trip","Porto","14–16 hrs","Train runs daily",null,"Train from €35.70 one way (verify)"],
+["arrabida-setubal-dolphins-day-trip","Arrábida, Setúbal & Dolphin Watching Day Trip","Blue-water beaches, a fishing port and resident dolphins","Day trip","Serra_da_Arrábida","8 hrs","Boat trips weather dependent",null,"€60–€110 (guide); private from €89 (verify)"]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · €'+(d[7]*RATE).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
