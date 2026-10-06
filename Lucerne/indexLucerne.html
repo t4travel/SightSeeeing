@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Copenhagen — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Copenhagen</h1><p>27 tours, palaces, museums, passes and day trips, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[
+["lucerne-old-town", "Lucerne Old Town — Chapel Bridge, Water Tower & Guided City Tour", "Covered wooden Chapel Bridge, Water Tower, Jesuit Church and the Old Town, free to walk or with a guide", "Free", "Chapel_Bridge", "1.5–3 hrs", "Open at all times", 0, "Free (guided tour from CHF 20)"],
+["lion-monument-glacier-garden", "Lion Monument, Glacier Garden & Bourbaki Panorama", "The carved Lion Monument, the Ice Age Glacier Garden and a giant circular painting, side by side", "Monument", "Lion_Monument", "2–3 hrs", "Verify closed days", 24, "Glacier Garden CHF 24 · Lion free"],
+["swiss-museum-of-transport", "Swiss Museum of Transport (Verkehrshaus) & Swiss Chocolate Adventure", "Switzerland's most visited museum, with planetarium, IMAX-style film theatre and a chocolate ride", "Museum", "Swiss_Museum_of_Transport", "3–6 hrs", "Open daily", 37, "CHF 37 (all-day pass from CHF 66.50)"],
+["lucerne-museum-card", "Lucerne Museum Card — Eight Museums, Two Days", "One card for the Museum of Transport, Rosengart, Art Museum, Glacier Garden, Bourbaki Panorama and more", "Pass", "Lucerne", "2 days", "Mondays closed at some museums", 39, "From CHF 39"],
+["lake-lucerne-panorama-cruise", "Lake Lucerne 1-Hour Panorama Cruise (Saphir H₂)", "One-hour cruise from the pier outside the station on the hydrogen-powered Saphir H₂ panorama yacht", "Tour", "Lake_Lucerne", "1 hr", "Season ends 18 Oct 2026", 19, "From CHF 19"],
+["lake-uri-grand-cruise", "Lake Uri & Grand Cruise — Rütli, Tellsplatte & Flüelen", "Steamer or motor-ship cruise to the cradle of Switzerland, with a Gotthard train link", "Tour", "Lake_Uri", "2–5.5 hrs", "Seasonal timetable", null, "Verify"],
+["lake-lucerne-dining-cruises", "Lake Lucerne Lunch, Sunset & Dinner Cruises", "Two-hour lunch cruises daily, sunset dinner cruises in summer and themed fondue and raclette ships", "Tour", "Lake_Lucerne", "2–2.5 hrs", "Lunch daily; sunset May–Sep", null, "Verify"],
+["buergenstock-hammetschwand", "Bürgenstock, Hammetschwand Lift & Felsenweg", "Shuttle boat and funicular to Bürgenstock, Europe's highest outdoor lift and a cliff-side rock path", "Attraction", "Bürgenstock", "3–5 hrs", "Shuttle runs all year", 80, "About CHF 80 boat + funicular (Verify)"],
+["stanserhorn-cabrio", "Stanserhorn CabriO — Open-Top Cable Car", "1893 funicular and the world's only open-top cable car to a revolving restaurant over ten lakes", "Attraction", "Stanserhorn", "3–5 hrs", "Season 11 Apr – 22 Nov 2026", null, "Free with Swiss Travel Pass"],
+["klewenalp-seelisberg-stoos", "Klewenalp, Seelisberg & Stoos — Lake Lucerne's Quiet Mountains", "Three smaller mountains reached by boat and unusual railways: Beckenried gondola, Treib funicular and the Stoos funicular", "Attraction", "Klewenalp", "3–5 hrs each", "Seasonal — Verify", null, "Verify"],
+["mount-pilatus", "Mount Pilatus — Golden Round Trip", "Boat, world's steepest cogwheel railway, cable car and gondola in a loop from Lucerne, with the Golden Round Trip to 18 Oct 2026", "Day trip", "Pilatus", "5–7 hrs", "Golden Round Trip ends 18 Oct 2026", null, "From CHF 42 with Swiss Travel Pass"],
+["mount-rigi", "Mount Rigi — Queen of the Mountains", "Europe's first mountain railway, free with the Swiss Travel Pass and Lucerne Travel Pass, 1 hr 15 from Lucerne", "Day trip", "Rigi", "5–7 hrs", "Open 365 days", 78, "CHF 78 (free with Swiss Travel Pass)"],
+["mount-titlis", "Mount Titlis — Glacier Cliff Walk", "Rotating cable car to 3,020 m, Europe's highest suspension bridge and the glacier cave, 45 minutes by train to Engelberg", "Day trip", "Mount_Titlis", "Full day", "Open all year except maintenance", null, "CHF 102–108 (Verify)"],
+["jungfraujoch-from-lucerne", "Jungfraujoch from Lucerne — Top of Europe", "The Luzern–Interlaken Express and the Jungfrau railways, best as a long day or an overnight", "Day trip", "Jungfraujoch", "Very long day or overnight", "Open daily; weather dependent", 224.4, "CHF 224.40 (Nov–Apr) · 261.20 (May–Oct)"],
+["bern-from-lucerne", "Bern Old Town Day Trip from Lucerne", "UNESCO old town, Zytglogge, Bear Park and Rose Garden, one hour by rail from Lucerne", "Day trip", "Bern", "Half to full day", "Open daily", 0, "Free (sights)"],
+["rhine-falls", "Rhine Falls & Schaffhausen Day Trip from Lucerne", "Europe's largest waterfall by volume, Laufen Castle viewpoints and a boat into the basin", "Day trip", "Rhine_Falls", "Full day", "Boat season about Apr–Oct", null, "Boat about CHF 10–25 (Verify)"],
+["lindt-home-of-chocolate", "Lindt Home of Chocolate, Kilchberg — from Lucerne", "Chocolate museum, 9 m chocolate fountain and the world's largest Lindt shop near Zurich", "Day trip", "Kilchberg,_Zürich", "2–3 hrs plus travel", "Verify", 17, "CHF 17"],
+["cailler-gruyeres", "Maison Cailler Chocolate Factory & Gruyères Cheese and Castle", "Chocolate factory and museum in Broc plus the cheese dairy and medieval castle in Gruyères", "Day trip", "Cailler", "Full day", "Cailler closed 25 Dec 2026", 17, "Cailler CHF 17"],
+["goldenpass-lucerne-montreux", "GoldenPass Line — Lucerne to Montreux by Panoramic Train", "Luzern–Interlaken Express and the GoldenPass Express to Lake Geneva and Chillon Castle", "Day trip", "GoldenPass_Express", "About 5 hrs 20 one way", "Daily services", null, "Chillon CHF 13.50–15 (Verify)"],
+["gotthard-panorama-express", "Gotthard Panorama Express — Boat and Train to Lugano", "Lake Lucerne steamer to Flüelen, then the Gotthard line south to Lugano", "Day trip", "Gotthard_Panorama_Express", "Full day", "Seasonal — Verify", null, "Verify"],
+["lucerne-guided-hikes", "Guided Hikes — Rigi Panorama, Bürgenstock Felsenweg & Sonnenberg", "Three easy to medium guided hikes with licensed Lucerne Tourism guides, up to 15 guests per guide", "Tour", "Rigi", "1.5–3 hrs hiking", "Seasonal — Verify", null, "Guide CHF 430–470 per group (Verify)"],
+["lucerne-christmas", "Christmas in Lucerne 2026 — Markets, Rudolf's Christmas & Ice Magic", "Franziskanerplatz market, lakeside Rudolf's Christmas, craft market and lights from late November", "Attraction", "Lucerne", "2–4 hrs", "20 Nov – 23 Dec 2026", 0, "Free"],
+["lilu-light-festival", "Lilu Light Festival Lucerne 2027", "Light installations on the Water Tower, churches and Old Town alleys, 14–24 January 2027", "Attraction", "Lucerne", "1.5–3 hrs evening", "14–24 Jan 2027 only", 0, "Free walk · tours from CHF 25"],
+["lucerne-carnival", "Lucerne Carnival (Fasnacht) 2027", "The city's largest annual event, with the Big Bang at 05:00, parades and masked streets", "Attraction", "Lucerne", "Day or evening", "Expected 4–9 Feb 2027 — Verify", 0, "Free"],
+["lucerne-travel-pass", "Lucerne Travel Pass (replaces the Tell-Pass)", "Free boats, city buses and 40+ mountain railways in Central Switzerland, from 1 April 2026", "Pass", "Lucerne", "3–10 days", "Not applicable", 240, "From CHF 240 (3 days)"],
+["lucerne-visitor-card", "Lucerne Visitor Card", "Free card for overnight guests with local transport and discounts, 2026 offers", "Pass", "Lucerne", "During your stay", "Not applicable", 0, "Free from your host"],
+["swiss-travel-pass", "Swiss Travel Pass & Half Fare Card", "Unlimited trains, buses and boats, with 50% off most mountain railways", "Pass", "Rail_transport_in_Switzerland", "3–15 days", "Not applicable", 254, "From CHF 254 (3 days)"]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · CHF '+(d[7]*RATE).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
