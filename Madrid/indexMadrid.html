@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Madrid — Tours &amp; Attractions</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--accent:#1B3A6B;--accent2:#e8eef8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1B3A6B,#6f9bd3);color:#fff;padding:36px 20px}.w{max-width:1180px;margin:0 auto}
+.hero a{color:#fff;font-size:12px;opacity:.85}.hero h1{font-size:36px}.hero p{opacity:.9;margin-top:6px;max-width:640px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;align-items:center}
+input{padding:10px 14px;border:1px solid var(--line);border-radius:99px;min-width:240px;font:inherit}
+button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{margin-left:auto;display:flex;gap:6px}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;padding-bottom:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.th{height:150px;background:linear-gradient(135deg,#5b4b8a,#a99bd3) center/cover;position:relative}
+.th span{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px}
+.ct{padding:14px}h3{font-size:16px;line-height:1.3;margin-bottom:4px}.s{color:var(--muted);font-size:13px;margin-bottom:8px}
+.m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{margin-top:10px;font-size:14px;font-weight:700;color:var(--accent)}.pr small{font-weight:400;color:var(--muted);font-size:12px}
+.ag{margin-top:6px;font-size:12px;background:var(--accent2);color:var(--accent);border-radius:8px;padding:3px 8px;display:inline-block}
+#g.list{display:block}#g.list .card{display:flex;margin-bottom:10px}#g.list .th{width:150px;height:auto;min-height:110px;flex:none}
+#g.list .ct{flex:1;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center}#g.list .m{flex-direction:row;gap:14px;flex-wrap:wrap}#g.list .pr{margin:0;text-align:right}
+#none{display:none;padding:30px 0;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);padding-bottom:30px}
+@media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
+</style></head><body>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Madrid</h1><p>13 tours, museums, a pass, a stadium visit, flamenco and day trips, with closed days and what's included.</p></div></div>
+<div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
+<span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
+<div id="g"></div><p id="none">No tours match your search.</p>
+<p class="note">Photos load from Wikipedia / Wikimedia Commons (licences vary, attribution recommended). Prices marked Verify are being confirmed.</p></div>
+<script>
+/* Role from index.html login (sessionStorage.role); ?role= is for testing. Client-side visibility only. */
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var isAgent=['agent','agent staff','staff','admin'].indexOf(role)>-1,RATE=0.10;
+/* [file, title, subtitle, category, wiki, duration, closed, price number|null, price label] */
+var D=[["prado-museum", "Prado Museum", "Velázquez's Las Meninas, Goya's Black Paintings and Spain's greatest old-master collection", "Museum", "Prado_Museum", "2–3 hrs", "1 Jan, 1 May, 25 Dec", 15, "€15 (official)"], ["royal-palace-madrid", "Royal Palace of Madrid", "The 3,000+ room Bourbon palace with state rooms, tapestries and Stradivari instruments", "Monument", "Royal_Palace_of_Madrid", "1–2.5 hrs", "1 & 6 Jan, 1 May, 25 Dec; state events", 18, "€18 (official)"], ["reina-sofia-museum", "Reina Sofía Museum — Guernica", "Picasso's Guernica plus Dalí, Miró and Spanish modern and contemporary art", "Museum", "Museo_Reina_Sofía", "2–3 hrs", "Tuesdays; 1 & 6 Jan, 1 & 15 May, 10 Nov, 24/25/31 Dec", 12, "€12 (official)"], ["thyssen-bornemisza-museum", "Thyssen-Bornemisza Museum", "Seven centuries of European art, from Old Masters to Pop Art, beside the Prado", "Museum", "Thyssen-Bornemisza_Museum", "2.5 hrs", "1 Jan, 1 May, 25 Dec", 14, "€14 (official)"], ["paseo-del-arte-pass", "Paseo del Arte Pass — Prado, Reina Sofía & Thyssen", "One entry each to the Prado, Reina Sofía and Thyssen-Bornemisza within a year", "Pass", "Golden_Triangle_of_Art", "1–3 days", "Follows each museum", 32.8, "€32.80"], ["retiro-park-crystal-palace", "Retiro Park & Crystal Palace Area", "A royal park until 1868, now Madrid's main green space, with a lake and glasshouse area", "Free", "Buen_Retiro_Park", "1.5–3 hrs", "Open daily; hours Verify", 0, "Free · Boat hire (verify)"], ["old-madrid-walk", "Old Madrid Walk — Plaza Mayor, Puerta del Sol & Royal Palace Area", "Plaza Mayor, Puerta del Sol's Kilometre Zero and the Royal Palace square", "Free", "Plaza_Mayor,_Madrid", "2–3 hrs", "Open daily", 0, "Free · Guided (verify)"], ["santiago-bernabeu-tour", "Santiago Bernabéu Stadium Tour", "Trophy museum, panoramic stadium view and dressing rooms at Real Madrid's home", "Attraction", "Santiago_Bernabéu_Stadium", "1.5–2 hrs", "1 Jan, 25 Dec", 37, "From €37 (official)"], ["flamenco-show-cardamomo", "Flamenco Show at Cardamomo", "Live cante, dance and guitar in a small tablao near Sol", "Tour", "Flamenco", "About 1–1.5 hrs", "Open daily", 39, "From €39 (Verify)"], ["madrid-tapas-food-tour", "Madrid Tapas & History Food Walk", "About 9 tapas and 4 drinks at four family-run bars with history stops", "Tour", "Tapas", "2.5–3 hrs", "Verify", 89, "Private group €89 pp · Public (Verify)"], ["toledo-day-trip", "Toledo Day Trip from Madrid", "Cathedral, synagogues, El Greco and the old walled city by 33-minute train", "Day trip", "Toledo,_Spain", "Full day (about 9 hrs)", "Monuments vary; Verify", 23, "Train from €23 return (Verify)"], ["segovia-day-trip", "Segovia Day Trip from Madrid", "The Roman aqueduct, the Alcázar and the Cathedral of Segovia", "Day trip", "Segovia", "Full day", "Sites vary; Verify", 9, "Alcázar about €9 (Verify)"], ["el-escorial-day-trip", "El Escorial Monastery Day Trip", "Royal monastery, library and Pantheon of Kings at San Lorenzo de El Escorial", "Day trip", "El_Escorial", "Half day", "Mondays; 1 & 6 Jan, 1 May, 24/25/31 Dec", 14, "€14 (official) · Guided €22"]];
+var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · €'+(d[7]*RATE).toFixed(2)+'</div>':'';
+return '<a class="card" href="'+d[0]+'.html" data-cat="'+d[3]+'" data-txt="'+esc((d[1]+' '+d[2]+' '+d[3]).toLowerCase())+'"><div class="th" data-wiki="'+d[4]+'"><span>'+d[3]+'</span></div><div class="ct"><div><h3>'+esc(d[1])+'</h3><p class="s">'+esc(d[2])+'</p><div class="m"><span>⏱ '+d[5]+'</span><span>Closed days: '+esc(d[6])+'</span></div>'+ag+'</div><div class="pr"><small>From</small> '+d[8]+'</div></div></a>'}).join('');
+var cs=g.querySelectorAll('.card'),fb=document.getElementById('f');
+fb.innerHTML=cats.map(function(c){return '<button data-c="'+c+'"'+(c=='All'?' class="on"':'')+'>'+c+'</button> '}).join('');
+function ap(){var q=document.getElementById('q').value.toLowerCase(),n=0;cs.forEach(function(c){var ok=(cur=='All'||c.dataset.cat==cur)&&c.dataset.txt.indexOf(q)>-1;c.style.display=ok?'':'none';if(ok)n++});document.getElementById('none').style.display=n?'none':'block'}
+document.getElementById('q').oninput=ap;
+fb.querySelectorAll('button').forEach(function(b){b.onclick=function(){fb.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;ap()}});
+function view(l){g.classList.toggle('list',l);document.getElementById('vl').classList.toggle('on',l);document.getElementById('vg').classList.toggle('on',!l)}
+document.getElementById('vg').onclick=function(){view(false)};document.getElementById('vl').onclick=function(){view(true)};
+document.querySelectorAll('.th').forEach(function(e){fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(e.dataset.wiki)).then(function(r){return r.json()}).then(function(j){var s=j.thumbnail&&j.thumbnail.source;if(s)e.style.backgroundImage='url('+s+')'}).catch(function(){})});
+</script></body></html>
