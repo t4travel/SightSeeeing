@@ -89,12 +89,12 @@ var RANK={'customer':0,'agent':1,'agent staff':1,'staff':2,'admin':2},NEED={agen
 var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
 var rk=RANK[role]||0;
 document.querySelectorAll('[data-visibility]').forEach(function(e){if(rk<NEED[e.dataset.visibility])e.hidden=true;else e.hidden=false});
-var T=[["Lunch cruise for individuals", null], ["Sunset dinner cruise (May – September)", null], ["Fondue or raclette ship", null]];
+var T=[["Lunch cruise for individuals", null, null], ["Sunset dinner cruise (May – September)", null, null], ["Fondue or raclette ship", null, null]];
 function m(v){return 'CHF '+v.toFixed(2).replace(/\.00$/,'')}
 function pv(v){return v==null?'Verify':(v===0?'Free':m(v))}
 function cm(v){return (v==null||v===0)?'—':m(v*RATE)}
 document.getElementById('comm').innerHTML=T.map(function(t){return '<tr><td>'+t[0]+'</td><td>'+pv(t[1])+'</td><td>10%</td><td>'+cm(t[1])+'</td></tr>'}).join('');
-document.getElementById('margin').innerHTML=T.map(function(t){return '<tr><td>'+t[0]+'</td><td>'+pv(t[1])+'</td><td>—</td><td>'+cm(t[1])+'</td><td>—</td></tr>'}).join('');
+document.getElementById('margin').innerHTML=T.map(function(t){var nt=(t[2]==null||t[1]==null||t[1]===0)?null:t[2];return '<tr><td>'+t[0]+'</td><td>'+pv(t[1])+'</td><td>'+(nt==null?'—':m(nt))+'</td><td>'+cm(t[1])+'</td><td>'+(nt==null?'—':m(t[1]-nt-t[1]*RATE))+'</td></tr>'}).join('');
 var sel=document.getElementById('pass');
 sel.onchange=function(){var v=parseFloat(sel.value),ok=!isNaN(v);document.getElementById('price-slot').textContent=ok?pv(v):'Verify';document.getElementById('agentc').textContent=ok?cm(v):'—'};
 document.getElementById('check').onclick=function(){var d=document.getElementById('date').value;document.getElementById('avail-slot').textContent=d?('Availability for '+d+' will appear here.'):'Please choose a date.'};
