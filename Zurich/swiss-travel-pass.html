@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Swiss Travel Pass &amp; Half Fare Card — 3, 4, 6, 8 and 15 Days | Zurich</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--card:#fff;--accent:#1B3A6B;--accent2:#e8eef8;--ok:#166534;--okbg:#e8f6ec;--no:#991b1b;--nobg:#fdecec;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+a{color:var(--accent)}.wrap{max-width:1120px;margin:0 auto;padding:20px}
+.crumbs{font-size:12px;color:var(--muted);margin-bottom:10px}
+h1{font-size:30px;line-height:1.2;margin-bottom:6px}.sub{color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.chip{background:var(--accent2);color:var(--accent);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:600}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:170px 170px;gap:8px;margin-bottom:22px;border-radius:var(--r);overflow:hidden}
+.ph,.gallery img{width:100%;height:100%;object-fit:cover;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:12px;color:#fff;font-weight:600;background:linear-gradient(135deg,#1B3A6B,#6f9bd3)}
+.ph:first-child{grid-row:span 2}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.fact b{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.fact span{font-weight:600;font-size:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:15px 18px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:22px;color:var(--accent);font-weight:400}
+details[open] summary::after{content:"–"}details[open] summary{border-bottom:1px solid var(--line)}
+summary:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.body{padding:16px 18px}.body p{margin-bottom:10px}.body h4{margin:14px 0 6px;font-size:14px}
+ul{list-style:none}ul li{padding:5px 0 5px 26px;position:relative}
+ul.tick li::before{content:"✔";position:absolute;left:0;color:var(--ok);font-weight:700}
+ul.cross li::before{content:"✖";position:absolute;left:0;color:var(--no);font-weight:700}
+ul.dot li::before{content:"•";position:absolute;left:8px;color:var(--accent);font-weight:700}
+.tag{font-size:11px;background:#fff3cd;color:#7a5b00;border-radius:6px;padding:1px 7px;margin-left:6px;font-weight:600;white-space:nowrap}
+.box{border-radius:12px;padding:12px 14px;margin-bottom:10px}.ok{background:var(--okbg)}.no{background:var(--nobg)}
+table{width:100%;border-collapse:collapse;font-size:13px;display:block;overflow-x:auto}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f3eff5;font-size:12px}
+.timeline{border-left:2px solid var(--accent2);margin-left:6px;padding-left:16px}
+.timeline div{margin-bottom:12px;position:relative}
+.timeline div::before{content:"";position:absolute;left:-23px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.staff{border:1px dashed var(--accent);background:#f4f7fc}.staff>summary{color:var(--accent)}
+.also{display:grid;grid-template-columns:1fr 1fr;gap:10px}.also a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px;text-decoration:none;color:var(--ink);background:var(--card)}.also a b{display:block}.also a span{font-size:13px;color:var(--muted)}
+.book{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.price{font-size:12px;color:var(--muted)}#price-slot{font-size:28px;font-weight:800;color:var(--accent);min-height:40px;display:flex;align-items:center}
+label{font-size:12px;font-weight:600;display:block;margin:12px 0 4px}
+select,input{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;font:inherit}
+#avail-slot{margin:12px 0;padding:10px 12px;border-radius:10px;background:#f3eff5;font-size:13px;min-height:44px}
+button.cta{width:100%;margin-top:6px;padding:13px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;cursor:pointer}
+.mini{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}.agentline{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--accent2);font-size:13px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.book{position:static;order:-1}.facts{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:150px 110px 110px}.ph:first-child{grid-column:span 2;grid-row:auto}.also{grid-template-columns:1fr}h1{font-size:24px}}
+</style></head><body><div class="wrap"><div class="crumbs"><a href="indexZurich.html">Zurich</a> › Pass › Swiss Travel Pass</div><h1>Swiss Travel Pass &amp; Half Fare Card — 3, 4, 6, 8 and 15 Days</h1>
+<p class="sub">Unlimited trains, buses and boats on consecutive days, with 50% off most mountain railways and free museums</p><div class="chips"><span class="chip">3, 4, 6, 8 or 15 Days</span><span class="chip">Flex Within a Month</span><span class="chip">Youth 30% Off</span><span class="chip">⭐ Rating — Verify</span></div><div class="layout"><main><div class="gallery" data-wiki="Rail_transport_in_Switzerland"><div class="ph">Image 1</div><div class="ph">Image 2</div><div class="ph">Image 3</div><div class="ph">Image 4</div><div class="ph">Image 5</div></div><div class="facts"><div class="fact"><b>Duration</b><span>3, 4, 6, 8 or 15 consecutive days; Flex: days of your choice within one month</span></div><div class="fact"><b>Entry type</b><span>Digital pass; valid from midnight on day 1 to 05:00 the morning after the last day</span></div><div class="fact"><b>Language</b><span>English</span></div><div class="fact"><b>Closed days</b><span>Not applicable</span></div></div>
+<details open><summary>Overview</summary><div class="body"><p>The Swiss Travel Pass covers unlimited travel on trains, buses and boats across Switzerland, local transport in over 90 towns and cities, and free entry to more than 500 museums. It gives 50% off most mountain railways (for example Schilthorn, Titlis, Glacier 3000, Gornergrat and First) and 25% off the Jungfraujoch top section. Mount Rigi is 100% included.</p><p>Every duration comes in 2nd and 1st class, as a consecutive pass, as a Flex pass (3, 4, 6, 8 or 15 travel days within one month) and as a Youth version for travellers up to their 25th birthday at 30% less. The Swiss Half Fare Card costs CHF 150 for one month and halves most fares.</p></div></details>
+<details open><summary>Ticket tiers</summary><div class="body">
+<table><tr><th>Ticket</th><th>Adult price (CHF)</th></tr><tr><td>Swiss Travel Pass 3 days, 2nd class</td><td>CHF 254</td></tr><tr><td>Swiss Travel Pass 4 days, 2nd class</td><td>CHF 309</td></tr><tr><td>Swiss Travel Pass 6 days, 2nd class</td><td>CHF 399</td></tr><tr><td>Swiss Travel Pass 8 days, 2nd class</td><td>CHF 439</td></tr><tr><td>Swiss Travel Pass 15 days, 2nd class</td><td>CHF 499</td></tr><tr><td>Swiss Travel Pass 3 days, 1st class</td><td>CHF 405</td></tr><tr><td>Swiss Travel Pass 4 days, 1st class</td><td>CHF 492</td></tr><tr><td>Swiss Travel Pass 6 days, 1st class</td><td>CHF 634</td></tr><tr><td>Swiss Travel Pass 8 days, 1st class</td><td>CHF 697</td></tr><tr><td>Swiss Travel Pass 15 days, 1st class</td><td>CHF 778</td></tr><tr><td>Swiss Travel Pass Youth 3 days, 2nd class</td><td>CHF 179</td></tr><tr><td>Swiss Travel Pass Youth 4 days, 2nd class</td><td>CHF 218</td></tr><tr><td>Swiss Travel Pass Youth 6 days, 2nd class</td><td>CHF 282</td></tr><tr><td>Swiss Travel Pass Youth 8 days, 2nd class</td><td>CHF 311</td></tr><tr><td>Swiss Travel Pass Youth 15 days, 2nd class</td><td>CHF 356</td></tr><tr><td>Swiss Travel Pass Flex 3 days in 1 month, 2nd class</td><td>CHF 289</td></tr><tr><td>Swiss Travel Pass Flex 4 days in 1 month, 2nd class</td><td>CHF 349</td></tr><tr><td>Swiss Travel Pass Flex 6 days in 1 month, 2nd class</td><td>CHF 424</td></tr><tr><td>Swiss Travel Pass Flex 8 days in 1 month, 2nd class</td><td>CHF 459</td></tr><tr><td>Swiss Travel Pass Flex 15 days in 1 month, 2nd class</td><td>About CHF 519 (guide figure, Verify)</td></tr><tr><td>Swiss Travel Pass Flex 4 days, 1st class</td><td>CHF 555</td></tr><tr><td>Swiss Travel Pass Flex 6 days, 1st class</td><td>CHF 674</td></tr><tr><td>Swiss Travel Pass Flex 8 days, 1st class</td><td>CHF 729</td></tr><tr><td>Swiss Half Fare Card, 1 month</td><td>CHF 150</td></tr></table><p style="margin-top:8px;font-size:13px;color:var(--muted)">Adult 2026 prices from Switzerland Tourism's official page; 2027 prices for the 4- and 8-day passes are unchanged. Youth (up to age 25): 1st class 3/4/6/8/15 days CHF 285 / 346 / 447 / 492 / 557. Flex Youth 4 and 8 days: CHF 246 and 325 (2nd), CHF 390 and 514 (1st). Flex 3-day 1st class, Flex 15-day 1st class and Flex Youth 3, 6 and 15 days: Verify. Children under 6 travel free; children 6–15 travel free with the Swiss Family Card when a parent holds a pass.</p><h4>Included</h4><div class="box ok"><ul class="tick"><li>Unlimited trains, buses and boats on the pass days<span class="tag">All tiers</span></li><li>Free entry to 500+ museums<span class="tag">All tiers</span></li><li>50% off most mountain railways; 25% off the Jungfraujoch top section<span class="tag">All tiers</span></li><li>Travel on any day within one month<span class="tag">Flex tiers</span></li></ul></div><h4>Not included</h4><div class="box no"><ul class="cross"><li>Seat reservations on panoramic trains (for example CHF 20 on the GoldenPass Express; CHF 54 on the Glacier Express)</li><li>Some mountain railways without a discount (for example Trümmelbach Falls)</li><li>Museum of Transport in Lucerne</li></ul></div>
+</div></details>
+<details><summary>Highlights</summary><div class="body"><ul class="dot"><li>Mount Rigi included in full</li><li>Free lake boats and city transport</li><li>Museums included</li><li>Family card: children 6–15 free</li></ul></div></details>
+<details><summary>Opening hours &amp; closed days</summary><div class="body"><p><b>Closed days:</b> Not applicable.</p><p><b>Hours:</b> Valid from midnight on the first day until 05:00 after the last day.</p><p><b>Best time:</b> Choose consecutive days for a fixed route and Flex for rest days.</p></div></details>
+<details><summary>Meeting point &amp; getting there</summary><div class="body"><p>Digital pass bought online; no collection point.</p><div class="ph" style="border-radius:12px;height:160px">Map placeholder — embed Google Maps</div></div></details>
+<details><summary>Accessibility &amp; physical rating</summary><div class="body"><ul class="dot"><li>Not applicable.</li></ul></div></details>
+<details><summary>Know before you go</summary><div class="body"><ul class="dot"><li>Compare against regional passes: Jungfrau Travel Pass, Berner Oberland Pass, Lucerne Travel Pass.</li><li>Refund rules: a pass can be refunded up to one day before its start date; once started it cannot be refunded (Rail Europe terms, Verify).</li><li>Seat reservations are compulsory on some panoramic trains: check each route.</li></ul></div></details>
+<details><summary>Cancellation &amp; changes</summary><div class="body"><p>Refund rules: Verify with the seller (Swiss Travel System, SBB or Rail Europe).</p></div></details>
+<details><summary>FAQs</summary><div class="body">
+<h4>Which durations exist?</h4><p>3, 4, 6, 8 and 15 consecutive days, plus Flex passes for the same numbers of days within one month.</p>
+<h4>How much is a 4-day 2nd-class pass?</h4><p>CHF 309 in 2026 (1st class CHF 492).</p>
+<h4>Is the Jungfraujoch free?</h4><p>No: 25% off the top section; the Jungfrau Travel Pass sets a connecting fare.</p>
+<h4>Is there a youth discount?</h4><p>Yes, 30% for travellers up to their 25th birthday.</p></div></details>
+<details open><summary>You might also like</summary><div class="body"><div class="also">
+<a href="zurich-card.html"><b>Zurich Card</b><span>City card</span></a>
+<a href="mount-rigi.html"><b>Mount Rigi</b><span>Free with the pass</span></a></div></div></details>
+<details class="staff" data-visibility="agent" open><summary>Agent: commission, groups &amp; selling notes</summary><div class="body">
+<table><tr><th>Ticket</th><th>Price</th><th>Commission %</th><th>Commission</th></tr><tbody id="comm"></tbody></table>
+<h4>Group / bulk tiers</h4><p>Group rate: Quote on request.</p>
+<h4>Why sell it</h4><ul class="dot"><li>Predictable cost for multi-city Switzerland itineraries.</li></ul>
+<h4>How to sell it</h4><ul class="dot"><li>Cost out the pass against point-to-point fares for each itinerary.</li></ul></div></details>
+
+<details class="staff" data-visibility="admin" open><summary>Admin: supplier, cost &amp; margin</summary><div class="body">
+<p><b>Supplier / DMC:</b> — (operator sheet pending)</p><p><b>Supplier contact:</b> —</p>
+<table><tr><th>Ticket</th><th>Customer price</th><th>Net supplier cost</th><th>Commission paid</th><th>Margin</th></tr><tbody id="margin"></tbody></table>
+<p style="margin-top:8px;font-size:13px">Margin = customer price − net supplier cost − commission paid to agent.</p></div></details>
+</main>
+
+<aside class="book">
+<div class="price">From</div><div id="price-slot">CHF 254</div><div class="price">per adult · CHF</div>
+<label for="pass">Ticket type</label>
+<select id="pass"><option value="254">Swiss Travel Pass 3 days, 2nd class</option><option value="309">Swiss Travel Pass 4 days, 2nd class</option><option value="399">Swiss Travel Pass 6 days, 2nd class</option><option value="439">Swiss Travel Pass 8 days, 2nd class</option><option value="499">Swiss Travel Pass 15 days, 2nd class</option><option value="405">Swiss Travel Pass 3 days, 1st class</option><option value="492">Swiss Travel Pass 4 days, 1st class</option><option value="634">Swiss Travel Pass 6 days, 1st class</option><option value="697">Swiss Travel Pass 8 days, 1st class</option><option value="778">Swiss Travel Pass 15 days, 1st class</option><option value="179">Swiss Travel Pass Youth 3 days, 2nd class</option><option value="218">Swiss Travel Pass Youth 4 days, 2nd class</option><option value="282">Swiss Travel Pass Youth 6 days, 2nd class</option><option value="311">Swiss Travel Pass Youth 8 days, 2nd class</option><option value="356">Swiss Travel Pass Youth 15 days, 2nd class</option><option value="289">Swiss Travel Pass Flex 3 days in 1 month, 2nd class</option><option value="349">Swiss Travel Pass Flex 4 days in 1 month, 2nd class</option><option value="424">Swiss Travel Pass Flex 6 days in 1 month, 2nd class</option><option value="459">Swiss Travel Pass Flex 8 days in 1 month, 2nd class</option><option value="">Swiss Travel Pass Flex 15 days in 1 month, 2nd class</option><option value="555">Swiss Travel Pass Flex 4 days, 1st class</option><option value="674">Swiss Travel Pass Flex 6 days, 1st class</option><option value="729">Swiss Travel Pass Flex 8 days, 1st class</option><option value="150">Swiss Half Fare Card, 1 month</option></select>
+<label for="date">Date</label><input id="date" type="date">
+<label for="pax">Guests</label><select id="pax"><option>1 adult</option><option>2 adults</option><option>3 adults</option><option>4+ adults</option></select>
+<div id="avail-slot">Availability will appear here.</div>
+<button class="cta" id="check">Check availability</button>
+<div class="mini">Pass by email</div>
+<div class="agentline" data-visibility="agent">Your commission: <b id="agentc">CHF 25.4</b> per adult</div>
+</aside></div></div>
+<script>
+/* Role: set by index.html login into sessionStorage.role; ?role= is for testing only. Client-side visibility only — move to server-side gating before public launch. */
+var RANK={'customer':0,'agent':1,'agent staff':1,'staff':2,'admin':2},NEED={agent:1,admin:2},RATE=0.10;
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var rk=RANK[role]||0;
+document.querySelectorAll('[data-visibility]').forEach(function(e){if(rk<NEED[e.dataset.visibility])e.hidden=true;else e.hidden=false});
+var T=[["Swiss Travel Pass 3 days, 2nd class", 254, null], ["Swiss Travel Pass 4 days, 2nd class", 309, null], ["Swiss Travel Pass 6 days, 2nd class", 399, null], ["Swiss Travel Pass 8 days, 2nd class", 439, null], ["Swiss Travel Pass 15 days, 2nd class", 499, null], ["Swiss Travel Pass 3 days, 1st class", 405, null], ["Swiss Travel Pass 4 days, 1st class", 492, null], ["Swiss Travel Pass 6 days, 1st class", 634, null], ["Swiss Travel Pass 8 days, 1st class", 697, null], ["Swiss Travel Pass 15 days, 1st class", 778, null], ["Swiss Travel Pass Youth 3 days, 2nd class", 179, null], ["Swiss Travel Pass Youth 4 days, 2nd class", 218, null], ["Swiss Travel Pass Youth 6 days, 2nd class", 282, null], ["Swiss Travel Pass Youth 8 days, 2nd class", 311, null], ["Swiss Travel Pass Youth 15 days, 2nd class", 356, null], ["Swiss Travel Pass Flex 3 days in 1 month, 2nd class", 289, null], ["Swiss Travel Pass Flex 4 days in 1 month, 2nd class", 349, null], ["Swiss Travel Pass Flex 6 days in 1 month, 2nd class", 424, null], ["Swiss Travel Pass Flex 8 days in 1 month, 2nd class", 459, null], ["Swiss Travel Pass Flex 15 days in 1 month, 2nd class", null, null], ["Swiss Travel Pass Flex 4 days, 1st class", 555, null], ["Swiss Travel Pass Flex 6 days, 1st class", 674, null], ["Swiss Travel Pass Flex 8 days, 1st class", 729, null], ["Swiss Half Fare Card, 1 month", 150, null]];
+function m(v){return 'CHF '+v.toFixed(2).replace(/\.00$/,'')}
+function pv(v){return v==null?'Verify':(v===0?'Free':m(v))}
+function cm(v){return (v==null||v===0)?'—':m(v*RATE)}
+document.getElementById('comm').innerHTML=T.map(function(t){return '<tr><td>'+t[0]+'</td><td>'+pv(t[1])+'</td><td>10%</td><td>'+cm(t[1])+'</td></tr>'}).join('');
+document.getElementById('margin').innerHTML=T.map(function(t){var nt=(t[2]==null||t[1]==null||t[1]===0)?null:t[2];return '<tr><td>'+t[0]+'</td><td>'+pv(t[1])+'</td><td>'+(nt==null?'—':m(nt))+'</td><td>'+cm(t[1])+'</td><td>'+(nt==null?'—':m(t[1]-nt-t[1]*RATE))+'</td></tr>'}).join('');
+var sel=document.getElementById('pass');
+sel.onchange=function(){var v=parseFloat(sel.value),ok=!isNaN(v);document.getElementById('price-slot').textContent=ok?pv(v):'Verify';document.getElementById('agentc').textContent=ok?cm(v):'—'};
+document.getElementById('check').onclick=function(){var d=document.getElementById('date').value;document.getElementById('avail-slot').textContent=d?('Availability for '+d+' will appear here.'):'Please choose a date.'};
+(function(){var g=document.querySelector('.gallery'),t=g.dataset.wiki,ph=g.querySelectorAll('.ph');
+fetch('https://en.wikipedia.org/api/rest_v1/page/media-list/'+encodeURIComponent(t)).then(function(r){return r.json()}).then(function(j){
+var im=(j.items||[]).filter(function(i){return i.type==='image'&&i.srcset&&!/\.svg|logo|icon|flag/i.test(i.title)}).slice(0,ph.length);
+im.forEach(function(i,k){var s=i.srcset[i.srcset.length-1].src,e=document.createElement('img');e.src=(s.indexOf('//')===0?'https:':'')+s;e.alt=(i.caption&&i.caption.text)||"Swiss Travel Pass";e.loading='lazy';e.onerror=function(){e.replaceWith(ph[k])};ph[k].replaceWith(e)});
+if(im.length){var c=document.createElement('p');c.style.cssText='font-size:11px;color:#6b6878;margin:-14px 0 18px';c.textContent='Photos: Wikipedia / Wikimedia Commons (licences vary, attribution recommended).';g.after(c)}}).catch(function(){})})();
+</script></body></html>
