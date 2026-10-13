@@ -1,0 +1,1874 @@
+{
+ "note": "Master Campania tour records. hubs = towns a product can be sold from. Reuse for Sorrento, Capri, Naples, Positano pages: copy the record, change city folder, keep facts and Verify flags.",
+ "updated": "2026-10-13",
+ "tours": [
+  {
+   "s": "amalfi-cathedral",
+   "t": "Amalfi Cathedral & Cloister of Paradise",
+   "sub": "Arab-Norman cloister, crypt and sacred-art museum",
+   "cat": "Monument",
+   "chips": [
+    "Self-guided",
+    "Cloister & Crypt",
+    "Piazza Duomo"
+   ],
+   "wiki": "Amalfi_Cathedral",
+   "alt": "Amalfi Cathedral",
+   "dur": "45–60 min",
+   "entry": "Walk-in ticket (no timed slot)",
+   "lang": "Self-guided; audio guide Verify",
+   "closed": "Open daily; museum days Verify",
+   "ov": [
+    "The cathedral of St Andrew stands at the top of 57 steps in Piazza Duomo. One ticket covers the Cloister of Paradise, the Basilica of the Crucifix with the Diocesan Museum, and the crypt of St Andrew.",
+    "The cloister was built in 1266–68 as a burial ground for Amalfi’s nobles and has interlaced Arab-style arches."
+   ],
+   "tiers": [
+    [
+     "Monumental complex (cloister, museum, crypt)",
+     3.0,
+     "€3"
+    ]
+   ],
+   "tnote": "Some guides quote €4; confirm at the ticket desk. Child and reduced fares: Verify. No separate non-EU or Indian-passport rate is published; Verify.",
+   "inc": [
+    [
+     "Cloister of Paradise",
+     "All tiers"
+    ],
+    [
+     "Basilica of the Crucifix and Diocesan Museum",
+     "All tiers"
+    ],
+    [
+     "Crypt of St Andrew",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Guided tour or audio guide (Verify)",
+     "All tiers"
+    ],
+    [
+     "Bell tower climb",
+     "All tiers"
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Black-and-white Arab-Norman façade with mosaic",
+    "13th-century Cloister of Paradise",
+    "Crypt holding the relics of St Andrew",
+    "Fountain of Sant’Andrea in the square outside"
+   ],
+   "steps": [],
+   "hrs": [
+    "Open daily. Some sources show the Diocesan Museum closed on Mondays; Verify.",
+    "Hours change by season (about 09:00 to 18:45 in spring and summer, shorter in winter). Verify on the day.",
+    "Right at opening, before cruise and coach groups arrive."
+   ],
+   "meet": "Piazza Duomo, 84011 Amalfi. Walk from the ferry pier and the SITA bus stop takes about 3 minutes.",
+   "acc": [
+    "The cathedral sits above 57 steps; a step-free route exists for visitors with reduced mobility: Verify with the cathedral.",
+    "Easy walking inside, with uneven old floors in the cloister."
+   ],
+   "rules": [
+    "Shoulders and knees must be covered.",
+    "Quiet during services; photography limits in the church: Verify."
+   ],
+   "know": [
+    "Entry to the nave during services is free but does not include the cloister and museum.",
+    "Sold from: Amalfi, Positano, Sorrento and Salerno as a stop on a coast day.",
+    "Weddings are common in summer and can close parts of the cathedral for short periods."
+   ],
+   "canc": "Walk-in ticket paid at the desk. Group booking terms: Verify.",
+   "faq": [
+    [
+     "Is the cathedral free?",
+     "The church is free to enter outside paid hours, but the cloister, crypt and museum need the €3 ticket."
+    ],
+    [
+     "How long do I need?",
+     "Plan 45 to 60 minutes including the steps."
+    ],
+    [
+     "Is there a dress code?",
+     "Yes. Cover shoulders and knees."
+    ]
+   ],
+   "also": [
+    [
+     "amalfi-paper-museum",
+     "Amalfi Paper Museum",
+     "Valley of the Mills, short walk"
+    ],
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "See the town from the sea"
+    ]
+   ],
+   "why": [
+    "Easy 1-hour add-on in the town centre for any coast day.",
+    "Low ticket price; works for every age and budget."
+   ],
+   "how": [
+    "Pair with a Marina Grande walk and a coffee at the square.",
+    "Suggest the first hour of the day to avoid group traffic."
+   ],
+   "mini": "Walk-in entry; no voucher needed",
+   "unit": "per adult",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "salerno"
+   ]
+  },
+  {
+   "s": "villa-rufolo",
+   "t": "Villa Rufolo Gardens, Ravello",
+   "sub": "Moorish cloister, terraces and the Belvedere over the sea",
+   "cat": "Monument",
+   "chips": [
+    "Self-guided",
+    "Gardens & Tower",
+    "Ravello"
+   ],
+   "wiki": "Villa_Rufolo",
+   "alt": "Villa Rufolo",
+   "dur": "1–1.5 hrs",
+   "entry": "Walk-in ticket",
+   "lang": "Self-guided; free guided tours on set dates",
+   "closed": "Open daily; festival-day changes",
+   "ov": [
+    "A 13th-century villa in Ravello’s main square, known for its Moorish cloister, tower and terraced gardens above the coast.",
+    "In summer the Belvedere terrace hosts the Ravello Festival concerts."
+   ],
+   "tiers": [
+    [
+     "Standard individual ticket",
+     8.0,
+     "€8"
+    ]
+   ],
+   "tnote": "Child and reduced fares: Verify. No separate non-EU or Indian-passport rate is published; Verify.",
+   "inc": [
+    [
+     "Gardens, Moorish cloister and tower",
+     "All tiers"
+    ],
+    [
+     "Terraces and temporary exhibitions",
+     "All tiers"
+    ],
+    [
+     "Free guided visit on scheduled dates (official programme)",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Festival concert tickets",
+     "All tiers"
+    ],
+    [
+     "Transport from Amalfi",
+     null
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Terrace views over the Gulf of Salerno",
+    "Moorish cloister",
+    "Gardens that inspired Wagner",
+    "Ravello Cathedral 30 m from the gate (free)"
+   ],
+   "steps": [],
+   "hrs": [
+    "Open daily; the villa has opened later on special event mornings (for example 11 August 2026).",
+    "Hours are seasonal and extend in summer. Festival period 4 July to 5 September 2026 can change closing time. Verify.",
+    "Early morning, or late afternoon in summer."
+   ],
+   "meet": "Piazza Duomo, 84010 Ravello. Reached by SITA bus from Amalfi (about 25 minutes, Verify) or private transfer. The coach stop is a short walk from the square.",
+   "acc": [
+    "Many steps and uneven paths; not suitable for wheelchairs on most routes: Verify.",
+    "Moderate walking with some climbs."
+   ],
+   "rules": [],
+   "know": [
+    "Ravello is a hill town; allow transfer time from the coast.",
+    "Sold from: Amalfi, Positano, Sorrento and Salerno.",
+    "Combine with Villa Cimbrone, a 10-minute walk along Via Santa Chiara."
+   ],
+   "canc": "Walk-in ticket paid at the gate. Group booking terms: Verify.",
+   "faq": [
+    [
+     "How much is Villa Rufolo?",
+     "The standard adult ticket is €8."
+    ],
+    [
+     "Are guided tours included?",
+     "On dates in the official programme the guided visit needs only the entry ticket."
+    ],
+    [
+     "Is the villa open during the festival?",
+     "Yes, but closing times can change in July to September. Check the day."
+    ]
+   ],
+   "also": [
+    [
+     "villa-cimbrone",
+     "Villa Cimbrone",
+     "Terrace of Infinity"
+    ],
+    [
+     "amalfi-cathedral",
+     "Amalfi Cathedral",
+     "Cloister of Paradise"
+    ]
+   ],
+   "why": [
+    "Classic postcard stop on every Ravello day.",
+    "Fixed low ticket price makes group costing simple."
+   ],
+   "how": [
+    "Sell it as a pair with Villa Cimbrone.",
+    "Recommend an early visit in summer to avoid heat and queues."
+   ],
+   "mini": "Entry paid at the gate",
+   "unit": "per adult · taxes included",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "salerno"
+   ]
+  },
+  {
+   "s": "villa-cimbrone",
+   "t": "Villa Cimbrone Gardens & Terrace of Infinity",
+   "sub": "Ravello’s clifftop gardens above the sea",
+   "cat": "Monument",
+   "chips": [
+    "Self-guided",
+    "Gardens",
+    "Ravello"
+   ],
+   "wiki": "Villa_Cimbrone",
+   "alt": "Villa Cimbrone",
+   "dur": "1.5–2.5 hrs",
+   "entry": "Walk-in ticket",
+   "lang": "Self-guided",
+   "closed": "Verify",
+   "ov": [
+    "Gardens beside a hotel estate on the cliff above Ravello, ending at the Terrace of Infinity with a line of busts facing the sea.",
+    "Allow time: the grounds are larger than Villa Rufolo."
+   ],
+   "tiers": [
+    [
+     "Garden entry",
+     10.0,
+     "€10 (Verify)"
+    ]
+   ],
+   "tnote": "Guides quote €7 to €10; confirm at the gate. Reduced fares: Verify.",
+   "inc": [
+    [
+     "Garden entry",
+     "All tiers"
+    ],
+    [
+     "Terrace of Infinity",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Hotel and restaurant services",
+     "All tiers"
+    ],
+    [
+     "Transport",
+     null
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Terrace of Infinity",
+    "Rose garden and temple of Bacchus",
+    "Panoramas over the coast"
+   ],
+   "steps": [],
+   "hrs": [
+    "Verify.",
+    "Hours are seasonal; Verify at the gate or with the estate.",
+    "Before 10:00, when it is quieter."
+   ],
+   "meet": "Via Santa Chiara 26, 84010 Ravello. About 10 minutes on foot from Piazza Duomo.",
+   "acc": [
+    "Paths with steps and slopes; limited step-free access: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "The estate is also a hotel, so some areas are private.",
+    "Sold from: Amalfi, Positano, Sorrento and Salerno."
+   ],
+   "canc": "Walk-in ticket. Group terms: Verify.",
+   "faq": [
+    [
+     "Is it the same as Villa Rufolo?",
+     "No. They are separate villas with separate tickets, a 10-minute walk apart."
+    ],
+    [
+     "How long should I allow?",
+     "Two hours is comfortable."
+    ],
+    [
+     "Best photo spot?",
+     "The Terrace of Infinity, ideally early."
+    ]
+   ],
+   "also": [
+    [
+     "villa-rufolo",
+     "Villa Rufolo",
+     "Moorish cloister"
+    ],
+    [
+     "amalfi-coast-private-car-tour",
+     "Private Car & Minivan Tour",
+     "Whole-coast day"
+    ]
+   ],
+   "why": [
+    "Quieter and more scenic than the main square sights.",
+    "Good for slower, photo-focused groups."
+   ],
+   "how": [
+    "Pair with Villa Rufolo on a half-day Ravello visit.",
+    "Warn guests about the walk from the bus stop."
+   ],
+   "mini": "Entry paid at the gate",
+   "unit": "per adult",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "salerno"
+   ]
+  },
+  {
+   "s": "emerald-grotto",
+   "t": "Emerald Grotto (Grotta dello Smeraldo)",
+   "sub": "Boat-in sea cave at Conca dei Marini",
+   "cat": "Attraction",
+   "chips": [
+    "Rowboat Visit",
+    "Weather Dependent",
+    "Conca dei Marini"
+   ],
+   "wiki": "Emerald_Grotto",
+   "alt": "Emerald Grotto",
+   "dur": "45–60 min incl. transfer",
+   "entry": "Ticket at cave or with boat transfer",
+   "lang": "Short commentary by boatman",
+   "closed": "Open daily; closes in rough seas",
+   "ov": [
+    "A small sea cave about 5 km west of Amalfi, lit green by sunlight through an underwater opening. You tour it in a rowboat that holds around 20 people.",
+    "You can reach it by lift and stairs from the coast road, or by boat from Amalfi."
+   ],
+   "tiers": [
+    [
+     "Cave entry (rowboat inside)",
+     6.0,
+     "€5–€10 (Verify)"
+    ],
+    [
+     "Boat transfer from Amalfi (excludes cave entry)",
+     null,
+     "About €10 return (Verify)"
+    ]
+   ],
+   "tnote": "Sources quote €5, €6, €7 and €10 for the cave. Boat transfers sold separately from cave entry. Verify before quoting.",
+   "inc": [
+    [
+     "Rowboat ride inside the grotto",
+     "Cave entry"
+    ],
+    [
+     "Return crossing from Amalfi pier",
+     "Boat transfer"
+    ]
+   ],
+   "exc": [
+    [
+     "Cave entry",
+     "Boat transfer"
+    ],
+    [
+     "Swimming (not allowed inside)",
+     "All tiers"
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Green light effect, strongest around midday",
+    "Stalactites and stalagmites",
+    "Underwater ceramic nativity scene"
+   ],
+   "steps": [],
+   "hrs": [
+    "Open daily; closes when the sea is rough.",
+    "About 10:00 to 16:30 as a rule; the boat transfer runs roughly March to November. Verify.",
+    "Around midday for the brightest colour."
+   ],
+   "meet": "Conca dei Marini, SS163 (about 5 km from Amalfi). Boats leave from Molo Pennello, Amalfi. By land: stairs or lift from the car park on the coast road.",
+   "acc": [
+    "Stairs or lift to the pier; boarding a rowboat needs steady balance. Not suitable for wheelchair users: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "Many coast boat tours stop outside but exclude the cave ticket.",
+    "Sold from: Amalfi, Positano and Sorrento (boat tours).",
+    "Tip expected by boatmen: Verify."
+   ],
+   "canc": "Weather closures follow the operator’s terms. Verify.",
+   "faq": [
+    [
+     "Is the cave ticket in the boat tour price?",
+     "Usually not. Check the inclusions."
+    ],
+    [
+     "Can we swim inside?",
+     "No."
+    ],
+    [
+     "What if the sea is rough?",
+     "Access can close without notice, so keep a flexible plan."
+    ]
+   ],
+   "also": [
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "Cave stop by sea"
+    ],
+    [
+     "amalfi-cathedral",
+     "Amalfi Cathedral",
+     "Town sights"
+    ]
+   ],
+   "why": [
+    "Short, low-cost highlight for a free half-day.",
+    "Strong photo moment for family groups."
+   ],
+   "how": [
+    "State clearly that cave entry is extra.",
+    "Offer a Plan B for rough-sea days."
+   ],
+   "mini": "Entry or boat voucher after booking",
+   "unit": "per person",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento"
+   ]
+  },
+  {
+   "s": "amalfi-coast-boat-tour",
+   "t": "Amalfi Coast Boat Tour (Shared or Private)",
+   "sub": "Coastal cruise past Amalfi, Positano and coves",
+   "cat": "Tour",
+   "chips": [
+    "Shared or Private",
+    "Skipper on Board",
+    "Weather Dependent"
+   ],
+   "wiki": "Amalfi_Coast",
+   "alt": "Amalfi Coast",
+   "dur": "3–8 hrs by itinerary",
+   "entry": "Boat departure at a set port",
+   "lang": "English-speaking skipper; Hindi Verify",
+   "closed": "Weather and sea conditions",
+   "ov": [
+    "Boat trips along the coast with stops at coves and villages such as Amalfi and Positano. Some itineraries continue to Capri.",
+    "Duration, route and port depend on the boat and the day’s sea conditions, so the final boarding point is confirmed at booking."
+   ],
+   "tiers": [
+    [
+     "Shared boat (reseller price)",
+     25.0,
+     "From €25 (Verify)"
+    ],
+    [
+     "Small-group boat, 4 hrs ex-Amalfi (reseller price)",
+     137.0,
+     "From about €137 (Verify)"
+    ],
+    [
+     "Private boat (per boat, not per person)",
+     null,
+     "From about €200 per boat (Verify)"
+    ]
+   ],
+   "tnote": "All figures are reseller prices and need confirmation. Port fees, drinks and cave entry vary by boat.",
+   "inc": [
+    [
+     "Skipper and fuel",
+     "All tiers"
+    ],
+    [
+     "Coastal cruise",
+     "All tiers"
+    ],
+    [
+     "Drinks and swim stop (varies by boat)",
+     "Small-group · Private"
+    ]
+   ],
+   "exc": [
+    [
+     "Cave and island entry fees",
+     "All tiers"
+    ],
+    [
+     "Lunch (varies)",
+     "All tiers"
+    ],
+    [
+     "Hotel transfers (varies)",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Villages seen from the water",
+    "Swim stops in coves",
+    "Optional Capri extension"
+   ],
+   "steps": [
+    [
+     "Meet at the port",
+     "Boarding point is confirmed with the booking."
+    ],
+    [
+     "Cruise the coast",
+     "Stops follow the booked itinerary and the sea."
+    ],
+    [
+     "Return to port",
+     "Back in the late afternoon on longer trips."
+    ]
+   ],
+   "hrs": [
+    "Runs by season and sea conditions.",
+    "Departure times set by operator. Verify.",
+    "Morning departures have calmer seas."
+   ],
+   "meet": "Departure from Amalfi, Salerno, Positano or Sorrento area by boat base; the exact port is confirmed at booking.",
+   "acc": [
+    "Boarding a small boat needs steady balance. Reduced mobility: ask before booking."
+   ],
+   "rules": [
+    "Wear non-slip flat shoes."
+   ],
+   "know": [
+    "Sea conditions and the captain’s decision can change or cancel a trip.",
+    "Sold from: Amalfi, Positano, Sorrento, Salerno, Naples (by boat base).",
+    "Tell the operator about children and mobility needs in advance."
+   ],
+   "canc": "Weather cancellations follow each operator’s terms. Verify.",
+   "faq": [
+    [
+     "Shared or private?",
+     "Shared is cheaper; private lets you set the route and pace."
+    ],
+    [
+     "Is Capri included?",
+     "Only on itineraries that say so."
+    ],
+    [
+     "Is food included?",
+     "Varies by boat. Check the tour inclusions."
+    ]
+   ],
+   "also": [
+    [
+     "emerald-grotto",
+     "Emerald Grotto",
+     "Cave near Amalfi"
+    ],
+    [
+     "capri-day-trip",
+     "Capri Day Trip",
+     "Island by sea"
+    ]
+   ],
+   "why": [
+    "Best-selling way to see the coast with no road traffic.",
+    "Private boats suit family and VIP groups."
+   ],
+   "how": [
+    "Ask for departure town first, then choose the fleet.",
+    "Quote private boats per boat, not per person."
+   ],
+   "mini": "Voucher by email after confirmation",
+   "unit": "per person (shared)",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "capri",
+    "naples",
+    "salerno"
+   ]
+  },
+  {
+   "s": "path-of-the-gods",
+   "t": "Path of the Gods Hike (Bomerano to Nocelle)",
+   "sub": "Cliff-top trail above the coast",
+   "cat": "Free",
+   "chips": [
+    "Self-guided or Guided",
+    "Moderate Hike",
+    "Scenic Trail"
+   ],
+   "wiki": "Path_of_the_Gods",
+   "alt": "Path of the Gods",
+   "dur": "3–4 hrs one way (Verify)",
+   "entry": "No ticket",
+   "lang": "Self-guided; guided options Verify",
+   "closed": "Open-air; weather dependent",
+   "ov": [
+    "A high trail along the cliffs above Praiano and Positano with wide views of the coast and Capri. The usual route runs from Bomerano (Agerola) to Nocelle.",
+    "The route has no ticket. Guided and transfer-inclusive versions are sold by operators."
+   ],
+   "tiers": [
+    [
+     "Self-guided walk",
+     0.0,
+     "Free"
+    ],
+    [
+     "Guided hike (reseller)",
+     null,
+     "Verify"
+    ]
+   ],
+   "tnote": "Transfers and guide prices vary by operator. Verify.",
+   "inc": [
+    [
+     "Trail access",
+     "Self-guided"
+    ],
+    [
+     "Guide and transfers (if booked)",
+     "Guided hike"
+    ]
+   ],
+   "exc": [
+    [
+     "Food and water",
+     "All tiers"
+    ],
+    [
+     "Transport to the trailhead",
+     "Self-guided"
+    ],
+    [
+     "Hiking gear",
+     null
+    ]
+   ],
+   "hl": [
+    "Views of Capri and the Li Galli islands",
+    "Terraced hillsides",
+    "Quiet village at Nocelle"
+   ],
+   "steps": [
+    [
+     "Reach Bomerano",
+     "Bus or transfer to the start in Agerola."
+    ],
+    [
+     "Walk the trail",
+     "Mostly level with some climbs; carry water."
+    ],
+    [
+     "Finish at Nocelle",
+     "Onward by bus or steps down to Positano (long, steep stairs)."
+    ]
+   ],
+   "hrs": [
+    "Open-air trail.",
+    "Walk in daylight. Avoid after heavy rain.",
+    "Early morning in warm months."
+   ],
+   "meet": "Start at Bomerano, Agerola (bus from Amalfi, Verify). End at Nocelle, above Positano.",
+   "acc": [
+    "Strenuous for some guests: uneven stone and steps, no shade in places.",
+    "Not suitable for wheelchairs or strollers."
+   ],
+   "rules": [
+    "Wear hiking shoes."
+   ],
+   "know": [
+    "Take water and sun protection.",
+    "Descending from Nocelle to Positano is a long staircase; many guests take the bus.",
+    "Sold from: Amalfi, Positano and Sorrento (transfers)."
+   ],
+   "canc": "Free to walk. Guided tour terms: Verify.",
+   "faq": [
+    [
+     "Is the hike free?",
+     "Yes, the trail has no entry fee."
+    ],
+    [
+     "How hard is it?",
+     "Moderate, with uneven ground; suited to active guests."
+    ],
+    [
+     "Do we need a guide?",
+     "No, but a guide helps with transfers and route."
+    ]
+   ],
+   "also": [
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "Coast from the sea"
+    ],
+    [
+     "lemon-tour-experience",
+     "Lemon Tour Experience",
+     "Slower local experience"
+    ]
+   ],
+   "why": [
+    "Free product that adds value to a long stay.",
+    "Good for fitter, repeat visitors."
+   ],
+   "how": [
+    "Check mobility and footwear first.",
+    "Offer a guided version with transfers to add margin."
+   ],
+   "mini": "No ticket needed",
+   "unit": "per person",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento"
+   ]
+  },
+  {
+   "s": "amalfi-paper-museum",
+   "t": "Amalfi Paper Museum (Museo della Carta)",
+   "sub": "Medieval paper mill in the Valley of the Mills",
+   "cat": "Museum",
+   "chips": [
+    "Self-guided",
+    "Paper Mill",
+    "Valley of the Mills"
+   ],
+   "wiki": "Amalfi",
+   "alt": "Amalfi",
+   "dur": "45–60 min",
+   "entry": "Walk-in ticket",
+   "lang": "Verify",
+   "closed": "Verify",
+   "ov": [
+    "A museum in a 13th-century paper mill in the Valle dei Mulini, a 15-minute walk from Piazza Duomo. It shows how Amalfi produced paper and includes a working demonstration."
+   ],
+   "tiers": [
+    [
+     "Standard entry",
+     null,
+     "Verify"
+    ]
+   ],
+   "tnote": "Ticket price and demonstration times: Verify with the museum.",
+   "inc": [
+    [
+     "Museum entry",
+     "All tiers"
+    ],
+    [
+     "Paper-making demonstration (Verify)",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Transport",
+     null
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Paper-making demonstration",
+    "Valley of the Mills walk",
+    "Handmade paper shop"
+   ],
+   "steps": [],
+   "hrs": [
+    "Verify.",
+    "Hours are seasonal. Verify.",
+    "Morning."
+   ],
+   "meet": "Valle dei Mulini, Amalfi, about 15 minutes’ walk from Piazza Duomo. Exact address: Verify.",
+   "acc": [
+    "Uphill walk and stairs; accessibility: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "Sold from: Amalfi only as a town add-on."
+   ],
+   "canc": "Walk-in ticket. Verify.",
+   "faq": [
+    [
+     "Where is it?",
+     "In the Valley of the Mills, uphill from the town centre."
+    ],
+    [
+     "How long?",
+     "About an hour."
+    ],
+    [
+     "Is there a shop?",
+     "Handmade paper is sold on site: Verify."
+    ]
+   ],
+   "also": [
+    [
+     "amalfi-cathedral",
+     "Amalfi Cathedral",
+     "Town centre"
+    ],
+    [
+     "lemon-tour-experience",
+     "Lemon Tour Experience",
+     "Another local craft"
+    ]
+   ],
+   "why": [
+    "Low-cost cultural stop for slower days."
+   ],
+   "how": [
+    "Pair with the cathedral and a walk through the valley."
+   ],
+   "mini": "Verify entry price",
+   "unit": "per adult",
+   "hubs": [
+    "amalfi"
+   ]
+  },
+  {
+   "s": "capri-day-trip",
+   "t": "Capri Day Trip (Ferry, Blue Grotto & Island)",
+   "sub": "Island day by ferry or boat tour",
+   "cat": "Day trip",
+   "chips": [
+    "Ferry or Boat",
+    "Blue Grotto Option",
+    "Full Day"
+   ],
+   "wiki": "Capri",
+   "alt": "Capri",
+   "dur": "6–9 hrs",
+   "entry": "Ferry tickets and separate Blue Grotto entry",
+   "lang": "Self-guided or guided by operator",
+   "closed": "Weather dependent; Blue Grotto closes in swell",
+   "ov": [
+    "Capri is reached by hydrofoil from Sorrento (about 20–25 minutes), Naples, or seasonally from Amalfi and Positano (about 50–60 minutes). Some operators run boat tours from Sorrento, Positano and Amalfi.",
+    "The tour boat does not enter the Blue Grotto. Visitors transfer to a small rowboat, and the cave entry is paid separately in cash at the grotto."
+   ],
+   "tiers": [
+    [
+     "Blue Grotto admission (paid at cave, cash)",
+     18.0,
+     "About €18–€19 (Verify)"
+    ],
+    [
+     "Ferry Sorrento–Capri, one way",
+     null,
+     "About €30 (Verify)"
+    ],
+    [
+     "Small-group boat day ex-Amalfi (reseller)",
+     null,
+     "From about US$161 (Verify)"
+    ]
+   ],
+   "tnote": "Ferry fares, boat-tour prices and rowboat fees vary by operator and season. Verify each element.",
+   "inc": [
+    [
+     "Blue Grotto admission (when bought at the cave)",
+     "Blue Grotto admission"
+    ],
+    [
+     "Sea crossing",
+     "Ferry · Boat day"
+    ],
+    [
+     "Skipper and soft drinks (varies by operator)",
+     "Boat day"
+    ]
+   ],
+   "exc": [
+    [
+     "Blue Grotto rowboat and entry on most boat tours",
+     "Ferry · Boat day"
+    ],
+    [
+     "Funicular, chairlift and taxis on Capri",
+     "All tiers"
+    ],
+    [
+     "Lunch",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Blue Grotto (when open)",
+    "Faraglioni rocks",
+    "Anacapri and Monte Solaro chairlift",
+    "Piazzetta in Capri town"
+   ],
+   "steps": [
+    [
+     "Cross to Capri",
+     "Ferry or boat from the departure port."
+    ],
+    [
+     "Choose the cave or the island loop",
+     "Blue Grotto queues can be long."
+    ],
+    [
+     "Free time on the island",
+     "Funicular to Capri town or bus to Anacapri."
+    ],
+    [
+     "Return crossing",
+     "Allow a buffer for the last ferry."
+    ]
+   ],
+   "hrs": [
+    "Weather dependent.",
+    "Ferry timetables are seasonal; Verify the last return.",
+    "Take an early crossing for the Blue Grotto."
+   ],
+   "meet": "Departure port depends on the product: Sorrento, Naples (Molo Beverello), Positano or Amalfi. Confirm at booking.",
+   "acc": [
+    "Island has steep streets and steps; the funicular helps. Rowboat entry to the cave is not suitable for guests with limited mobility: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "Rough seas can close the Blue Grotto.",
+    "Sold from: Sorrento, Naples, Positano, Amalfi and Salerno.",
+    "Keep a buffer for the last ferry back."
+   ],
+   "canc": "Operator terms; weather policy: Verify.",
+   "faq": [
+    [
+     "Is the Blue Grotto included?",
+     "Usually not. It is bought separately at the cave."
+    ],
+    [
+     "From where is Capri closest?",
+     "Sorrento, about 20–25 minutes by hydrofoil."
+    ],
+    [
+     "What if the grotto is closed?",
+     "Operators offer an island tour or a refund per their terms."
+    ]
+   ],
+   "also": [
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "Private or shared boat"
+    ],
+    [
+     "amalfi-coast-ferries",
+     "Ferries & Coast Connections",
+     "Plan the crossing"
+    ]
+   ],
+   "why": [
+    "Highest-demand day trip across the region.",
+    "Fits every hub, so one product serves many hotels."
+   ],
+   "how": [
+    "Ask where the guests sleep, then pick the shortest crossing.",
+    "Tell guests the grotto is a separate cash payment."
+   ],
+   "mini": "Vouchers by email after booking",
+   "unit": "per person",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "capri",
+    "naples",
+    "salerno"
+   ]
+  },
+  {
+   "s": "pompeii",
+   "t": "Pompeii Archaeological Park",
+   "sub": "Roman city preserved by Vesuvius",
+   "cat": "Monument",
+   "chips": [
+    "Timed Entry",
+    "Self-guided or Guided",
+    "UNESCO Site"
+   ],
+   "wiki": "Pompeii",
+   "alt": "Pompeii",
+   "dur": "3–4 hrs",
+   "entry": "Time-slot e-ticket",
+   "lang": "Self-guided; guides book separately",
+   "closed": "Verify holidays",
+   "ov": [
+    "The ancient Roman city buried by the eruption of AD 79. Since April the park uses time-slot entry with a daily cap of 20,000 visitors.",
+    "Choose the basic ticket for the main site or the Pompeii+ ticket to add the suburban villas and Boscoreale."
+   ],
+   "tiers": [
+    [
+     "Pompeii (basic)",
+     20.0,
+     "€20"
+    ],
+    [
+     "Pompeii+ (adds villas, Villa Regina, Boscoreale Antiquarium)",
+     25.0,
+     "€25"
+    ],
+    [
+     "3-day ticket",
+     30.0,
+     "€30"
+    ],
+    [
+     "My Pompeii Card (season ticket)",
+     45.0,
+     "€45"
+    ]
+   ],
+   "tnote": "Prices from the park’s notice effective 12 January 2026. Under 18 free; €2 for EU citizens aged 18–25; first Sunday of the month free (booking still needed, Verify). Indian passport holders pay the standard adult price; Verify.",
+   "inc": [
+    [
+     "Entry to Pompeii main site",
+     "All tiers"
+    ],
+    [
+     "Suburban villas, Villa Regina, Boscoreale Antiquarium",
+     "Pompeii+ · 3-day"
+    ],
+    [
+     "Repeat entries over the validity period",
+     "3-day · My Pompeii Card"
+    ]
+   ],
+   "exc": [
+    [
+     "Audio guide (not sold by the park)",
+     "All tiers"
+    ],
+    [
+     "Live guide",
+     "All tiers"
+    ],
+    [
+     "Transport from Naples, Sorrento or Amalfi",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Forum and amphitheatre",
+    "Casts of victims",
+    "Frescoed houses",
+    "Villa of the Mysteries (Pompeii+)"
+   ],
+   "steps": [
+    [
+     "Choose entrance",
+     "Porta Marina, Piazza Anfiteatro or Piazza Esedra."
+    ],
+    [
+     "Security check",
+     "Small bags only (30×30×15 cm)."
+    ],
+    [
+     "Visit by time slot",
+     "Keep to your slot; some houses have reduced access from 1 November after 16:00."
+    ]
+   ],
+   "hrs": [
+    "Verify holidays.",
+    "Hours vary by season; slots are sold online. Verify on the official site.",
+    "Opening time; heat peaks midday in summer."
+   ],
+   "meet": "Entrances at Porta Marina, Piazza Anfiteatro and Piazza Esedra. Circumvesuviana to Pompei Scavi–Villa dei Misteri. Official info line: +39 081 8575 347.",
+   "acc": [
+    "Uneven Roman paving; some routes are accessible; Verify.",
+    "Long walking with little shade."
+   ],
+   "rules": [
+    "Bags larger than 30×30×15 cm are not allowed."
+   ],
+   "know": [
+    "Tickets are sold by the official seller; unofficial sites resell at higher prices.",
+    "Sold from: Naples, Sorrento, Amalfi, Positano and Salerno.",
+    "Hat, water and flat shoes are essential."
+   ],
+   "canc": "Official tickets: terms Verify. Reseller tours follow their own terms.",
+   "faq": [
+    [
+     "How much is Pompeii?",
+     "The basic ticket is €20 and Pompeii+ is €25."
+    ],
+    [
+     "Are there tickets for non-EU visitors?",
+     "No separate rate; the standard adult price applies."
+    ],
+    [
+     "How long do I need?",
+     "Three to four hours for the highlights."
+    ],
+    [
+     "Is it free for children?",
+     "Under 18 enter free."
+    ]
+   ],
+   "also": [
+    [
+     "mount-vesuvius",
+     "Mount Vesuvius",
+     "Volcano summit"
+    ],
+    [
+     "herculaneum",
+     "Herculaneum",
+     "Smaller, better-preserved site"
+    ]
+   ],
+   "why": [
+    "Top-selling archaeology product for Indian groups from every hub.",
+    "Clear published fares make costing simple."
+   ],
+   "how": [
+    "Quote slots early in peak season.",
+    "Add a licensed guide for first-time visitors."
+   ],
+   "mini": "Time-slot e-ticket by email",
+   "unit": "per adult · taxes included",
+   "hubs": [
+    "naples",
+    "sorrento",
+    "amalfi",
+    "positano",
+    "salerno"
+   ]
+  },
+  {
+   "s": "mount-vesuvius",
+   "t": "Mount Vesuvius National Park",
+   "sub": "Walk to the crater rim",
+   "cat": "Attraction",
+   "chips": [
+    "Timed Entry",
+    "Moderate Walk",
+    "Volcano Views"
+   ],
+   "wiki": "Mount_Vesuvius",
+   "alt": "Mount Vesuvius",
+   "dur": "2.5–3.5 hrs",
+   "entry": "Park entry with timed slot",
+   "lang": "Self-guided; guided options Verify",
+   "closed": "Closes in bad weather",
+   "ov": [
+    "A trail leads to the crater rim of Vesuvius, with views over the Bay of Naples. Operators sell entry with a shuttle from Ercolano or other pickup points.",
+    "The summit can close in storms or high wind."
+   ],
+   "tiers": [
+    [
+     "Park entry only",
+     null,
+     "Verify"
+    ],
+    [
+     "Entry + Vesuvio Express shuttle from Ercolano (reseller)",
+     null,
+     "From about US$36 (Verify)"
+    ]
+   ],
+   "tnote": "Official park fare not confirmed. Reseller figures need checking.",
+   "inc": [
+    [
+     "Park entry and trail",
+     "All tiers"
+    ],
+    [
+     "Shuttle from Ercolano",
+     "Entry + shuttle"
+    ]
+   ],
+   "exc": [
+    [
+     "Guide",
+     "All tiers"
+    ],
+    [
+     "Lunch",
+     "All tiers"
+    ],
+    [
+     "Hotel transfers",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Crater rim walk",
+    "Views over the Bay of Naples",
+    "Combines with Herculaneum or Pompeii"
+   ],
+   "steps": [],
+   "hrs": [
+    "Closes in bad weather.",
+    "Seasonal hours. Verify.",
+    "Morning, clear days."
+   ],
+   "meet": "Pickup points vary by product (Ercolano, Pompeii, Naples, hotel). Confirm at booking.",
+   "acc": [
+    "Steep gravel path; not suitable for wheelchairs: Verify."
+   ],
+   "rules": [
+    "Sturdy shoes and layers."
+   ],
+   "know": [
+    "Weather closures reduce the refund; check each operator.",
+    "Sold from: Naples, Sorrento, Amalfi, Positano and Salerno."
+   ],
+   "canc": "Operator terms; partial refund on weather closures at some resellers: Verify.",
+   "faq": [
+    [
+     "How hard is the walk?",
+     "Moderate; steep gravel for about 25 minutes (Verify)."
+    ],
+    [
+     "Can I combine it?",
+     "Yes, with Herculaneum or Pompeii."
+    ],
+    [
+     "What if it is closed?",
+     "Follow the operator’s weather policy."
+    ]
+   ],
+   "also": [
+    [
+     "herculaneum",
+     "Herculaneum",
+     "Pair for a volcano day"
+    ],
+    [
+     "pompeii",
+     "Pompeii",
+     "Archaeology"
+    ]
+   ],
+   "why": [
+    "Strong add-on for archaeology days."
+   ],
+   "how": [
+    "Check footwear and mobility.",
+    "Offer a combo with Herculaneum."
+   ],
+   "mini": "Voucher by email after booking",
+   "unit": "per person",
+   "hubs": [
+    "naples",
+    "sorrento",
+    "amalfi",
+    "positano",
+    "salerno"
+   ]
+  },
+  {
+   "s": "herculaneum",
+   "t": "Herculaneum Archaeological Park (Ercolano)",
+   "sub": "Compact Roman town with well-preserved houses",
+   "cat": "Monument",
+   "chips": [
+    "Self-guided or Guided",
+    "Compact Site",
+    "UNESCO Site"
+   ],
+   "wiki": "Herculaneum",
+   "alt": "Herculaneum",
+   "dur": "2–3 hrs",
+   "entry": "Park entry ticket",
+   "lang": "Self-guided; guides book separately",
+   "closed": "Verify",
+   "ov": [
+    "A smaller Roman town buried by the same eruption, with two-storey houses, mosaics and wooden structures preserved. Easier to cover than Pompeii."
+   ],
+   "tiers": [
+    [
+     "Adult (18+)",
+     16.0,
+     "€16 (Verify)"
+    ]
+   ],
+   "tnote": "Reseller listings quote €16 adult, €2 for EU citizens aged 18–25, free under 18. Verify with the park. No separate non-EU or Indian-passport rate found; Verify.",
+   "inc": [
+    [
+     "Park entry",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Guide",
+     "All tiers"
+    ],
+    [
+     "Transport from Naples or Sorrento",
+     "All tiers"
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "House of the Mosaic Atrium",
+    "Sea-front boat sheds",
+    "Wooden roofs and beds"
+   ],
+   "steps": [],
+   "hrs": [
+    "Verify.",
+    "Seasonal hours. Verify.",
+    "Morning."
+   ],
+   "meet": "Ercolano Scavi station on the Circumvesuviana, about 10 minutes’ walk to the entrance. Verify.",
+   "acc": [
+    "Uneven paving; some accessible routes: Verify."
+   ],
+   "rules": [
+    "Large bags are not allowed (Verify)."
+   ],
+   "know": [
+    "Sold from: Naples, Sorrento, Amalfi and Salerno.",
+    "Shorter than Pompeii, so it fits half-day plans."
+   ],
+   "canc": "Official ticket terms: Verify.",
+   "faq": [
+    [
+     "Why choose it over Pompeii?",
+     "Better preserved and quicker to see."
+    ],
+    [
+     "How long?",
+     "Two to three hours."
+    ],
+    [
+     "Is a guide needed?",
+     "Helpful; none is provided by the park."
+    ]
+   ],
+   "also": [
+    [
+     "pompeii",
+     "Pompeii",
+     "Larger city"
+    ],
+    [
+     "mount-vesuvius",
+     "Mount Vesuvius",
+     "Volcano summit"
+    ]
+   ],
+   "why": [
+    "Alternative for guests short on time."
+   ],
+   "how": [
+    "Sell as a half-day with Vesuvius."
+   ],
+   "mini": "Entry ticket by email",
+   "unit": "per adult",
+   "hubs": [
+    "naples",
+    "sorrento",
+    "amalfi",
+    "salerno"
+   ]
+  },
+  {
+   "s": "paestum",
+   "t": "Paestum & Velia Archaeological Parks",
+   "sub": "Greek temples and a national museum",
+   "cat": "Monument",
+   "chips": [
+    "Self-guided",
+    "3-Day Ticket",
+    "UNESCO Site"
+   ],
+   "wiki": "Paestum",
+   "alt": "Paestum",
+   "dur": "2.5–4 hrs",
+   "entry": "Park ticket (valid 3 days)",
+   "lang": "No internal guided tours by the park",
+   "closed": "Verify",
+   "ov": [
+    "Three Greek temples stand beside the National Archaeological Museum of Paestum. One ticket covers the Paestum site, the museum and the Velia site and is valid for 3 days.",
+    "The parks do not run internal guided tours; guides are arranged separately."
+   ],
+   "tiers": [
+    [
+     "Parks ticket (Paestum, Museum, Velia)",
+     null,
+     "Verify"
+    ]
+   ],
+   "tnote": "Adult price not confirmed; Verify on the official site.",
+   "inc": [
+    [
+     "Paestum archaeological area",
+     "All tiers"
+    ],
+    [
+     "National Archaeological Museum of Paestum",
+     "All tiers"
+    ],
+    [
+     "One entry to Velia",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Guided tour",
+     "All tiers"
+    ],
+    [
+     "Transport",
+     "All tiers"
+    ],
+    [
+     "Food and drinks",
+     null
+    ]
+   ],
+   "hl": [
+    "Temple of Neptune",
+    "Temple of Hera",
+    "Museum collection"
+   ],
+   "steps": [],
+   "hrs": [
+    "Verify.",
+    "Regulation to 21 September 2026 published; later hours Verify. Ticket office 08:30–18:30, museum last admission 19:00 (summer).",
+    "Morning."
+   ],
+   "meet": "Main entrance ticket office near the Temple of Neptune, Paestum.",
+   "acc": [
+    "Museum fully accessible and linked to the site by an accessible route (official)."
+   ],
+   "rules": [
+    "No flash photography in the museum."
+   ],
+   "know": [
+    "Sold from: Salerno, Amalfi and Naples.",
+    "About 1–1.5 hours by road from Amalfi: Verify."
+   ],
+   "canc": "Official ticket: Verify.",
+   "faq": [
+    [
+     "How many days is the ticket valid?",
+     "Three days, one entry to each site."
+    ],
+    [
+     "Is there a guide?",
+     "The park offers none; book one separately."
+    ],
+    [
+     "Is the museum accessible?",
+     "Yes, per the park."
+    ]
+   ],
+   "also": [
+    [
+     "pompeii",
+     "Pompeii",
+     "Roman city"
+    ],
+    [
+     "amalfi-coast-private-car-tour",
+     "Private Car & Minivan Tour",
+     "Custom day"
+    ]
+   ],
+   "why": [
+    "Quieter archaeology alternative with Greek temples."
+   ],
+   "how": [
+    "Pair with a mozzarella tasting stop (Verify)."
+   ],
+   "mini": "Official ticket at the entrance",
+   "unit": "per adult",
+   "hubs": [
+    "salerno",
+    "amalfi",
+    "naples"
+   ]
+  },
+  {
+   "s": "lemon-tour-experience",
+   "t": "Lemon Tour Experience",
+   "sub": "Amalfi lemon terraces and tasting",
+   "cat": "Tour",
+   "chips": [
+    "Experience",
+    "Tasting",
+    "Small Group"
+   ],
+   "wiki": "Amalfi_Coast",
+   "alt": "Amalfi Coast lemon terraces",
+   "dur": "2–3 hrs (Verify)",
+   "entry": "Booked experience",
+   "lang": "Verify",
+   "closed": "Verify",
+   "ov": [
+    "A local experience in the terraced lemon groves of the coast with tastings. Duration, route and price depend on the operator."
+   ],
+   "tiers": [
+    [
+     "Lemon tour (shared)",
+     null,
+     "Verify"
+    ]
+   ],
+   "tnote": "Price and inclusions: Verify with the operator.",
+   "inc": [
+    [
+     "Visit to lemon terraces",
+     "All tiers"
+    ],
+    [
+     "Tasting (Verify)",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Hotel transfers (Verify)",
+     "All tiers"
+    ],
+    [
+     "Meals",
+     null
+    ]
+   ],
+   "hl": [
+    "Terraced groves",
+    "Lemon-based tasting",
+    "Local producers"
+   ],
+   "steps": [],
+   "hrs": [
+    "Verify.",
+    "Operator schedule. Verify.",
+    "Morning."
+   ],
+   "meet": "Meeting point set by operator. Verify.",
+   "acc": [
+    "Steps and terraces; accessibility: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "Sold from: Amalfi, Positano and Sorrento."
+   ],
+   "canc": "Operator terms: Verify.",
+   "faq": [
+    [
+     "Is it vegetarian?",
+     "Lemon tastings are normally vegetarian; Verify."
+    ],
+    [
+     "How long?",
+     "Two to three hours."
+    ],
+    [
+     "Is a transfer included?",
+     "Verify."
+    ]
+   ],
+   "also": [
+    [
+     "path-of-the-gods",
+     "Path of the Gods",
+     "Active alternative"
+    ],
+    [
+     "amalfi-paper-museum",
+     "Amalfi Paper Museum",
+     "Local craft"
+    ]
+   ],
+   "why": [
+    "Easy cultural add-on that suits vegetarian groups."
+   ],
+   "how": [
+    "Confirm transfer and dietary needs."
+   ],
+   "mini": "Voucher after confirmation",
+   "unit": "per person",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento"
+   ]
+  },
+  {
+   "s": "amalfi-coast-private-car-tour",
+   "t": "Private Car & Minivan Tour of the Amalfi Coast",
+   "sub": "Chauffeur-driven day to Positano, Amalfi and Ravello",
+   "cat": "Tour",
+   "chips": [
+    "Private",
+    "Chauffeur Driven",
+    "Custom Route"
+   ],
+   "wiki": "Amalfi_Coast",
+   "alt": "Amalfi Coast road",
+   "dur": "6–10 hrs by plan",
+   "entry": "Private vehicle with driver",
+   "lang": "Driver-guide language: Verify",
+   "closed": "Operates daily; traffic dependent",
+   "ov": [
+    "A private car or minivan with a driver for the coast road, with stops at viewpoints and towns such as Positano, Amalfi and Ravello.",
+    "Stops, timing and pace are set when you book."
+   ],
+   "tiers": [
+    [
+     "Private vehicle (per vehicle)",
+     null,
+     "Quote on request"
+    ]
+   ],
+   "tnote": "Pricing per vehicle by route and duration: Quote on request.",
+   "inc": [
+    [
+     "Private vehicle and driver",
+     "All tiers"
+    ],
+    [
+     "Agreed route and stops",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Entry tickets",
+     "All tiers"
+    ],
+    [
+     "Meals",
+     "All tiers"
+    ],
+    [
+     "Tips",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Custom stops",
+    "Photo stops on the coast road",
+    "Door-to-door pickup"
+   ],
+   "steps": [],
+   "hrs": [
+    "Runs daily.",
+    "Set at booking.",
+    "Start early to avoid traffic."
+   ],
+   "meet": "Pickup at hotel, port or station, agreed at booking.",
+   "acc": [
+    "Vehicle access varies; mobility needs should be stated at booking."
+   ],
+   "rules": [],
+   "know": [
+    "The coast road is slow in summer.",
+    "Sold from: all hubs."
+   ],
+   "canc": "Terms set at quote: Verify.",
+   "faq": [
+    [
+     "Is it private?",
+     "Yes, the vehicle is reserved for your group."
+    ],
+    [
+     "Can we add Pompeii or Paestum?",
+     "Yes; route and price are quoted."
+    ],
+    [
+     "Is a guide included?",
+     "Driver only unless a guide is added: Verify."
+    ]
+   ],
+   "also": [
+    [
+     "villa-rufolo",
+     "Villa Rufolo",
+     "Ravello stop"
+    ],
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "Sea alternative"
+    ]
+   ],
+   "why": [
+    "Flexible for families and small groups."
+   ],
+   "how": [
+    "Quote per vehicle and ask for the hotel address."
+   ],
+   "mini": "Quote and confirmation by email",
+   "unit": "per vehicle",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "capri",
+    "naples",
+    "salerno"
+   ]
+  },
+  {
+   "s": "amalfi-coast-ferries",
+   "t": "Ferries & Coast Connections (Amalfi, Positano, Capri)",
+   "sub": "Seasonal sea links along the coast",
+   "cat": "Tour",
+   "chips": [
+    "Seasonal",
+    "Scenic Transfer",
+    "Timetable Based"
+   ],
+   "wiki": "Amalfi_Coast",
+   "alt": "Amalfi Coast ferry",
+   "dur": "30–60 min per crossing",
+   "entry": "Ferry ticket",
+   "lang": "Staff English: Verify",
+   "closed": "Seasonal timetable; weather cancellations",
+   "ov": [
+    "Passenger ferries link Salerno, Amalfi, Positano and Capri in the warmer months, and Sorrento to Capri runs more often. Amalfi to Capri takes about 50–60 minutes, often via Positano.",
+    "Timetables and fares change by season."
+   ],
+   "tiers": [
+    [
+     "Ferry fare",
+     null,
+     "Verify"
+    ]
+   ],
+   "tnote": "Fares and timetables: Verify with the operator.",
+   "inc": [
+    [
+     "Sea crossing",
+     "All tiers"
+    ]
+   ],
+   "exc": [
+    [
+     "Luggage handling",
+     "All tiers"
+    ],
+    [
+     "Transfers to the pier",
+     "All tiers"
+    ]
+   ],
+   "hl": [
+    "Scenic arrival by sea",
+    "Avoids coast-road traffic"
+   ],
+   "steps": [],
+   "hrs": [
+    "Seasonal.",
+    "Timetable changes; Verify each day.",
+    "Morning crossings."
+   ],
+   "meet": "Amalfi and Positano piers; Salerno, Sorrento and Naples ports. Confirm at booking.",
+   "acc": [
+    "Gangways and boarding; accessibility: Verify."
+   ],
+   "rules": [],
+   "know": [
+    "Rough seas cancel crossings.",
+    "Sold from: all hubs."
+   ],
+   "canc": "Operator terms: Verify.",
+   "faq": [
+    [
+     "Do ferries run all year?",
+     "Coast links are seasonal; Verify the dates."
+    ],
+    [
+     "How long to Capri?",
+     "About 50–60 minutes from Amalfi, 20–25 from Sorrento."
+    ],
+    [
+     "Can I pre-book?",
+     "Yes, through the operator."
+    ]
+   ],
+   "also": [
+    [
+     "capri-day-trip",
+     "Capri Day Trip",
+     "Island day"
+    ],
+    [
+     "amalfi-coast-boat-tour",
+     "Amalfi Coast Boat Tour",
+     "Cruise"
+    ]
+   ],
+   "why": [
+    "Useful for hotel-to-hotel moves without a car."
+   ],
+   "how": [
+    "Check the last return time before selling."
+   ],
+   "mini": "Ticket by email after booking",
+   "unit": "per person",
+   "hubs": [
+    "amalfi",
+    "positano",
+    "sorrento",
+    "capri",
+    "naples",
+    "salerno"
+   ]
+  }
+ ]
+}
