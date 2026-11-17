@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Milford Sound Nature Cruise — Southern Discoveries and RealNZ | Milford Sound and Fiordland</title><style>
+:root{--ink:#1c1a22;--muted:#6b6878;--line:#e6e2ea;--bg:#faf8fb;--card:#fff;--accent:#1B3A6B;--accent2:#e8eef8;--ok:#166534;--okbg:#e8f6ec;--no:#991b1b;--nobg:#fdecec;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+a{color:var(--accent)}.wrap{max-width:1120px;margin:0 auto;padding:20px}
+.crumbs{font-size:12px;color:var(--muted);margin-bottom:10px}
+h1{font-size:30px;line-height:1.2;margin-bottom:6px}.sub{color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.chip{background:var(--accent2);color:var(--accent);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:600}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:170px 170px;gap:8px;margin-bottom:22px;border-radius:var(--r);overflow:hidden}
+.ph,.gallery img{width:100%;height:100%;object-fit:cover;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:12px;color:#fff;font-weight:600;background:linear-gradient(135deg,#1B3A6B,#6f9bd3)}
+.ph:first-child{grid-row:span 2}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.fact b{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.fact span{font-weight:600;font-size:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:15px 18px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:22px;color:var(--accent);font-weight:400}
+details[open] summary::after{content:"–"}details[open] summary{border-bottom:1px solid var(--line)}
+summary:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.body{padding:16px 18px}.body p{margin-bottom:10px}.body h4{margin:14px 0 6px;font-size:14px}
+ul{list-style:none}ul li{padding:5px 0 5px 26px;position:relative}
+ul.tick li::before{content:"✔";position:absolute;left:0;color:var(--ok);font-weight:700}
+ul.cross li::before{content:"✖";position:absolute;left:0;color:var(--no);font-weight:700}
+ul.dot li::before{content:"•";position:absolute;left:8px;color:var(--accent);font-weight:700}
+.tag{font-size:11px;background:#fff3cd;color:#7a5b00;border-radius:6px;padding:1px 7px;margin-left:6px;font-weight:600;white-space:nowrap}
+.box{border-radius:12px;padding:12px 14px;margin-bottom:10px}.ok{background:var(--okbg)}.no{background:var(--nobg)}
+table{width:100%;border-collapse:collapse;font-size:13px;display:block;overflow-x:auto}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f3eff5;font-size:12px}
+.timeline{border-left:2px solid var(--accent2);margin-left:6px;padding-left:16px}
+.timeline div{margin-bottom:12px;position:relative}
+.timeline div::before{content:"";position:absolute;left:-23px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.staff{border:1px dashed var(--accent);background:#f4f7fc}.staff>summary{color:var(--accent)}
+.also{display:grid;grid-template-columns:1fr 1fr;gap:10px}.also a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px;text-decoration:none;color:var(--ink);background:var(--card)}.also a b{display:block}.also a span{font-size:13px;color:var(--muted)}
+.book{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.price{font-size:12px;color:var(--muted)}#price-slot{font-size:28px;font-weight:800;color:var(--accent);min-height:40px;display:flex;align-items:center}
+label{font-size:12px;font-weight:600;display:block;margin:12px 0 4px}
+select,input{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;font:inherit}
+#avail-slot{margin:12px 0;padding:10px 12px;border-radius:10px;background:#f3eff5;font-size:13px;min-height:44px}
+button.cta{width:100%;margin-top:6px;padding:13px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;cursor:pointer}
+.mini{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}.agentline{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--accent2);font-size:13px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.book{position:static;order:-1}.facts{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:150px 110px 110px}.ph:first-child{grid-column:span 2;grid-row:auto}.also{grid-template-columns:1fr}h1{font-size:24px}}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="indexMilfordSound.html">Milford Sound and Fiordland</a> › Tour › Milford Sound Nature Cruise</div>
+<h1>Milford Sound Nature Cruise — Southern Discoveries and RealNZ</h1>
+<p class="sub">Cruise the full length of Milford Sound past Mitre Peak and Stirling Falls</p>
+<div class="chips"><span class="chip">Fiord Cruise</span><span class="chip">Mitre Peak</span><span class="chip">Wildlife</span><span class="chip">⭐ Rating — Verify</span></div>
+<div class="layout"><main>
+<div class="gallery" data-wiki="Milford_Sound"><div class="ph">Image 1</div><div class="ph">Image 2</div><div class="ph">Image 3</div><div class="ph">Image 4</div><div class="ph">Image 5</div></div>
+<div class="facts"><div class="fact"><b>Duration</b><span>About 2 hrs</span></div><div class="fact"><b>Entry type</b><span>Pre-booked timed cruise</span></div><div class="fact"><b>Language</b><span>English</span></div><div class="fact"><b>Closed days</b><span>Verify; weather-dependent</span></div></div>
+
+<details open><summary>Overview</summary><div class="body"><p>Milford Sound (Piopiotahi) is a fiord in Fiordland National Park, a UNESCO World Heritage area. Cruises run its full length past Mitre Peak and Stirling Falls, with chances to see fur seals, bottlenose dolphins and the rare Fiordland crested penguin.</p><p>Prices below are from a New Zealand booking site for 2026 dates and change a lot by date. Two operators are shown: Southern Discoveries and RealNZ. Mitre Peak Cruises runs a smaller 2-hour cruise: its price was not found. Verify every price.</p></div></details>
+
+<details open><summary>Ticket tiers</summary><div class="body">
+<table><tr><th>Ticket</th><th>Adult price (NZD)</th><th>Child (NZD)</th></tr>
+<tr><td>Southern Discoveries Nature Cruise – adult, lowest dated rate (less than 6)</td><td>NZ$89.50</td><td>NZ$79</td></tr><tr><td>Southern Discoveries Nature Cruise – adult, mid dated rate</td><td>NZ$119</td><td>NZ$69</td></tr><tr><td>Southern Discoveries Nature Cruise – adult, higher dated rate</td><td>NZ$159</td><td>—</td></tr><tr><td>Southern Discoveries lunch buffet (11:15, 13:15 and 13:30 cruises) – per person</td><td>NZ$75</td><td>NZ$75</td></tr><tr><td>Captain’s VIP Lounge upgrade (max 20 guests, 11:15 and 13:30 cruises) – per person, deal from</td><td>NZ$172.80</td><td>—</td></tr><tr><td>RealNZ Milford Sound Cruise (Sovereign) – adult</td><td>NZ$169</td><td>NZ$49</td></tr><tr><td>RealNZ Milford Sound Cruise (Haven) – adult</td><td>NZ$175</td><td>NZ$49</td></tr></table>
+<p style="margin-top:8px;font-size:13px;color:var(--muted)">Child rate for Southern Discoveries applies to ages 5–14; infants aged 0–4 are free. RealNZ child rates apply to ages 5–15 and include the Milford Sound levy. Children must be accompanied by an adult on all cruises. A pre-ordered lunch box is available from RealNZ. Mitre Peak Cruises: Verify.</p>
+<h4>Included</h4><div class="box ok"><ul class="tick">
+<li>Nature cruise of the full fiord, 1 hr 45 min to 2 hrs<span class="tag">All tiers</span></li><li>Complimentary tea and coffee<span class="tag">Southern Discoveries</span></li><li>Milford Sound levy<span class="tag">RealNZ</span></li><li>Buffet lunch<span class="tag">Lunch buffet</span></li><li>Private deck, food and drinks<span class="tag">Captain’s VIP Lounge</span></li></ul></div>
+<h4>Not included</h4><div class="box no"><ul class="cross">
+<li>Transport to Milford Sound</li><li>Snacks and drinks, unless stated</li><li>Scenic flights</li></ul></div>
+</div></details>
+
+<details><summary>Highlights</summary><div class="body"><ul class="dot"><li>Mitre Peak and Stirling Falls</li><li>Seals, dolphins and penguins</li><li>UNESCO World Heritage fiord</li><li>Wheelchair-friendly RealNZ vessels</li></ul></div></details>
+
+<details><summary>Opening hours &amp; closed days</summary><div class="body"><p><b>Closed days:</b> Verify; weather-dependent</p><p><b>Hours:</b> Cruises run through the day; the buffet lunch is on selected sailings. Allow time to drive: about 5 hours from Queenstown or 3 hours from Te Anau. Verify.</p><p><b>Best time:</b> Late morning for fewer coaches; calm days give the best views.</p></div></details>
+
+<details><summary>Meeting point &amp; getting there</summary><div class="body"><p>Milford Sound Visitor Terminal, State Highway 94, Milford Sound. Self-drive guests should arrive at least one hour before departure.</p><div class="ph" style="border-radius:12px;height:160px">Map placeholder — embed Google Maps</div></div></details>
+
+<details><summary>Accessibility &amp; physical rating</summary><div class="body"><ul class="dot"><li>Easy: boat boarding; accessibility: Verify.</li></ul></div></details>
+
+<details><summary>Know before you go</summary><div class="body"><ul class="dot"><li>Fill your fuel tank in Te Anau; there are no petrol stations on the road.</li><li>The Milford Road can close in bad weather.</li><li>Wildlife is not guaranteed.</li></ul></div></details>
+
+<details><summary>Cancellation &amp; changes</summary><div class="body"><p>Verify with the supplier or your ticket supplier before booking.</p></div></details>
+
+<details><summary>FAQs</summary><div class="body">
+<h4>How long is the cruise?</h4><p>About 1 hour 45 minutes to 2 hours.</p>
+<h4>Is lunch available?</h4><p>A buffet lunch is offered on selected sailings for NZ$75.</p>
+<h4>How far is Milford from Queenstown?</h4><p>About 5 hours’ drive.</p>
+<h4>Do infants pay?</h4><p>Infants aged 0–4 are free.</p>
+</div></details>
+
+<details open><summary>You might also like</summary><div class="body"><div class="also">
+<a href="milford-sound-coach-and-cruise.html"><b>Milford Sound Coach &amp; Nature Cruise from Queenstown or Te Anau</b><span>Transport included</span></a>
+<a href="doubtful-sound-day-cruise-manapouri.html"><b>Doubtful Sound Wilderness Cruise from Manapouri</b><span>A quieter fiord</span></a>
+</div></div></details>
+
+<details class="staff" data-visibility="agent" open><summary>Agent: commission, groups &amp; selling notes</summary><div class="body">
+<table><tr><th>Ticket</th><th>Price</th><th>Commission %</th><th>Commission</th></tr><tbody id="comm"></tbody></table>
+<h4>Group / bulk tiers</h4><p>Group rates: Verify. Quote on request.</p>
+<h4>Why sell it</h4><ul class="dot"><li>Fiordland’s headline product.</li><li>Premium options for higher spend.</li></ul>
+<h4>How to sell it</h4><ul class="dot"><li>Compare operators and sailing times.</li><li>Explain the long drive.</li></ul></div></details>
+
+<details class="staff" data-visibility="admin" open><summary>Admin: supplier, cost &amp; margin</summary><div class="body">
+<p><b>Supplier / DMC:</b> — (operator sheet pending)</p><p><b>Supplier contact:</b> —</p>
+<table><tr><th>Ticket</th><th>Customer price</th><th>Net supplier cost</th><th>Commission paid</th><th>Margin</th></tr><tbody id="margin"></tbody></table>
+<p style="margin-top:8px;font-size:13px">Margin = customer price − net supplier cost − commission paid to agent.</p></div></details>
+</main>
+
+<aside class="book">
+<div class="price">From</div><div id="price-slot">NZ$89.50</div><div class="price">per adult · taxes included</div>
+<label for="pass">Ticket type</label>
+<select id="pass"><option value="89.5">Southern Discoveries Nature Cruise – adult, lowest dated rate (less than 6)</option><option value="119">Southern Discoveries Nature Cruise – adult, mid dated rate</option><option value="159">Southern Discoveries Nature Cruise – adult, higher dated rate</option><option value="75">Southern Discoveries lunch buffet (11:15, 13:15 and 13:30 cruises) – per person</option><option value="172.8">Captain’s VIP Lounge upgrade (max 20 guests, 11:15 and 13:30 cruises) – per person, deal from</option><option value="169">RealNZ Milford Sound Cruise (Sovereign) – adult</option><option value="175">RealNZ Milford Sound Cruise (Haven) – adult</option></select>
+<label for="date">Date</label><input id="date" type="date">
+<label for="pax">Guests</label><select id="pax"><option>1 adult</option><option>2 adults</option><option>3 adults</option><option>4+ adults</option></select>
+<div id="avail-slot">Availability will appear here.</div>
+<button class="cta" id="check">Check availability</button>
+<div class="mini">E-ticket by email after booking</div>
+<div class="agentline" data-visibility="agent">Your commission: <b id="agentc">NZ$8.95</b> per adult</div>
+</aside></div></div>
+<script>
+/* Role: set by index.html login into sessionStorage.role; ?role= is for testing only. Client-side visibility only — move to server-side gating before public launch. */
+var RANK={'customer':0,'agent':1,'agent staff':1,'staff':2,'admin':2},NEED={agent:1,admin:2},RATE=0.10;
+var role='customer';try{role=(sessionStorage.getItem('role')||new URLSearchParams(location.search).get('role')||'customer').toLowerCase()}catch(e){}
+var rk=RANK[role]||0;
+document.querySelectorAll('[data-visibility]').forEach(function(e){if(rk<NEED[e.dataset.visibility])e.hidden=true;else e.hidden=false});
+var T=[["Southern Discoveries Nature Cruise – adult, lowest dated rate (less than 6)", 89.5], ["Southern Discoveries Nature Cruise – adult, mid dated rate", 119], ["Southern Discoveries Nature Cruise – adult, higher dated rate", 159], ["Southern Discoveries lunch buffet (11:15, 13:15 and 13:30 cruises) – per person", 75], ["Captain’s VIP Lounge upgrade (max 20 guests, 11:15 and 13:30 cruises) – per person, deal from", 172.8], ["RealNZ Milford Sound Cruise (Sovereign) – adult", 169], ["RealNZ Milford Sound Cruise (Haven) – adult", 175]];
+function m(v){return v===0?'Free':(v%1===0?'NZ$'+v:'NZ$'+v.toFixed(2))}function c(v){return v>0?m(v):'—'}
+document.getElementById('comm').innerHTML=T.map(function(t){return '<tr><td>'+t[0]+'</td><td>'+m(t[1])+'</td><td>10%</td><td>'+c(t[1]*RATE)+'</td></tr>'}).join('');
+document.getElementById('margin').innerHTML=T.map(function(t){return '<tr><td>'+t[0]+'</td><td>'+m(t[1])+'</td><td>—</td><td>'+c(t[1]*RATE)+'</td><td>—</td></tr>'}).join('');
+var sel=document.getElementById('pass');
+sel.onchange=function(){var v=parseFloat(sel.value);if(isNaN(v)){document.getElementById('price-slot').textContent='Verify';document.getElementById('agentc').textContent='—';return}document.getElementById('price-slot').textContent=m(v);document.getElementById('agentc').textContent=c(v*RATE)};
+document.getElementById('check').onclick=function(){var d=document.getElementById('date').value;document.getElementById('avail-slot').textContent=d?('Availability for '+d+' will appear here.'):'Please choose a date.'};
+(function(){var g=document.querySelector('.gallery'),t=g.dataset.wiki,ph=g.querySelectorAll('.ph');
+fetch('https://en.wikipedia.org/api/rest_v1/page/media-list/'+encodeURIComponent(t)).then(function(r){return r.json()}).then(function(j){
+var im=(j.items||[]).filter(function(i){return i.type==='image'&&i.srcset&&!/\.svg|logo|icon|flag/i.test(i.title)}).slice(0,ph.length);
+im.forEach(function(i,k){var s=i.srcset[i.srcset.length-1].src,e=document.createElement('img');e.src=(s.indexOf('//')===0?'https:':'')+s;e.alt=(i.caption&&i.caption.text)||'Milford Sound Nature Cruise';e.loading='lazy';e.onerror=function(){e.replaceWith(ph[k])};ph[k].replaceWith(e)});
+if(im.length){var c=document.createElement('p');c.style.cssText='font-size:11px;color:#6b6878;margin:-14px 0 18px';c.textContent='Photos: Wikipedia / Wikimedia Commons (licences vary, attribution recommended).';g.after(c)}}).catch(function(){})})();
+</script></body></html>
