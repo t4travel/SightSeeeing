@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 .note{font-size:12px;color:var(--muted);padding-bottom:30px}
 @media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
 </style></head><body>
-<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Reykjavik</h1><p>7 tours and attractions with closed days and what is included.</p></div></div>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Reykjavik</h1><p>9 tours and attractions with closed days and what is included.</p></div></div>
 <div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
 <span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
 <div id="g"></div><p id="none">No tours match your search.</p>
@@ -42,7 +42,9 @@ var D=[
 ["harpa-concert-hall-reykjavik", "Harpa Concert Hall", "Glass-fronted concert hall on the harbour with free entry to the building", "Free", "Harpa_(concert_hall)", "30–60 min", "Open daily", 0, "Free"],
 ["whale-watching-reykjavik", "Classic Whale Watching (Elding)", "2.5–3.5 hour whale watching cruise from the Old Harbour", "Tour", "Whale_watching", "2.5–3.5 hrs", "Weather-dependent", 13990, "Adult ISK 13,990 (verify)"],
 ["northern-lights-bus-tour-reykjavik", "Northern Lights Bus Tour", "Evening coach tour out of Reykjavik to hunt for the aurora", "Tour", "Aurora", "3.5–4 hrs", "Aug–Apr", 8999, "From ISK 8,999 (verify)"],
-["sun-voyager-old-harbour-walk-reykjavik", "Sun Voyager and Old Harbour Walk", "Free waterfront walk from the Sun Voyager sculpture to Harpa and the Old Harbour", "Free", "Sun_Voyager", "1.5–2 hrs", "Open daily", 0, "Free"]];
+["sun-voyager-old-harbour-walk-reykjavik", "Sun Voyager and Old Harbour Walk", "Free waterfront walk from the Sun Voyager sculpture to Harpa and the Old Harbour", "Free", "Sun_Voyager", "1.5–2 hrs", "Open daily", 0, "Free"],
+["sky-lagoon-reykjavik", "Sky Lagoon", "Oceanfront geothermal lagoon with the seven-step Skjól ritual, 15 minutes from the city", "Attraction", "Kópavogur", "2–3 hrs", "24–25 Dec", 13990, "Saman from ISK 13,990 (verify)"],
+["golden-circle-day-tour-reykjavik", "Golden Circle Day Tour", "Full-day coach tour to Þingvellir, Geysir and Gullfoss from Reykjavik", "Tour", "Golden_Circle_(Iceland)", "7–8 hrs", "Daily", 11990, "Coach tour from ISK 11,990 (verify)"]];
 var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · ISK '+Math.round(d[7]*RATE).toLocaleString('en-US')+'</div>':'';
