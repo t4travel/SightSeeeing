@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 .note{font-size:12px;color:var(--muted);padding-bottom:30px}
 @media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
 </style></head><body>
-<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Rovaniemi</h1><p>7 tours and attractions with closed days and what is included.</p></div></div>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Rovaniemi</h1><p>9 tours and attractions with closed days and what is included.</p></div></div>
 <div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
 <span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
 <div id="g"></div><p id="none">No tours match your search.</p>
@@ -42,7 +42,9 @@ var D=[
 ["husky-reindeer-safari-rovaniemi", "Husky and Reindeer Safari", "Combined husky and reindeer sleigh rides with a Santa Claus Village visit", "Tour", "Sled_dog", "4–6 hrs", "Winter season", 210, "From about €190–210 (verify)"],
 ["santa-claus-safari-lapland-safaris-rovaniemi", "Santa Claus Safari (Lapland Safaris)", "Family safari with a reindeer farm, Santa ceremony, lunch and Santa Claus Village", "Tour", "Reindeer", "5–6 hrs", "1 Dec–4 Apr", 219, "From €219 (verify)"],
 ["snowmobile-safari-rovaniemi", "Snowmobile Safari (Rider’s Dream)", "Three-hour snowmobile safari with the option to drive solo, from Lapland Safaris", "Tour", "Snowmobile", "3 hrs", "1 Dec–4 Apr", 234, "From €234 (verify)"],
-["northern-lights-tour-rovaniemi", "Northern Lights Tour", "Evening guided aurora hunt by bus, car or snowmobile from Rovaniemi", "Tour", "Aurora", "3–4 hrs", "Aug–Apr", 100, "From about €75–150 (verify)"]];
+["northern-lights-tour-rovaniemi", "Northern Lights Tour", "Evening guided aurora hunt by bus, car or snowmobile from Rovaniemi", "Tour", "Aurora", "3–4 hrs", "Aug–Apr", 100, "From about €75–150 (verify)"],
+["santas-igloos-arctic-circle-rovaniemi", "Santa’s Igloos Arctic Circle", "71 premium glass igloos at Santa Claus Village for aurora viewing all year", "Attraction", "Santa_Claus_Village", "Overnight stay", "Open all year", null, "From about €300 per night (verify)"],
+["arctic-snowhotel-glass-igloos-rovaniemi", "Arctic SnowHotel and Glass Igloos", "Stay in a hotel built of snow and ice, or in a glass igloo, outside Rovaniemi", "Attraction", "Rovaniemi", "Overnight stay", "Seasonal", null, "Room rates: Verify"]];
 var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · €'+Math.round(d[7]*RATE).toLocaleString('en-US')+'</div>':'';
