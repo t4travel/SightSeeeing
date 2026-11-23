@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 .note{font-size:12px;color:var(--muted);padding-bottom:30px}
 @media(max-width:600px){#g.list .card{display:block}#g.list .th{width:auto;height:120px}#g.list .ct{display:block}#g.list .pr{text-align:left;margin-top:8px}.views{margin-left:0}}
 </style></head><body>
-<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Ylläs</h1><p>7 tours and attractions with closed days and what is included.</p></div></div>
+<div class="hero"><div class="w"><a href="../city.html">‹ All cities</a><h1>Ylläs</h1><p>11 tours and attractions with closed days and what is included.</p></div></div>
 <div class="w"><div class="bar"><input id="q" placeholder="Search tours &amp; attractions…" aria-label="Search">
 <span id="f"></span><span class="views"><button id="vg" class="on">Cards</button><button id="vl">List</button></span></div>
 <div id="g"></div><p id="none">No tours match your search.</p>
@@ -42,7 +42,11 @@ var D=[
 ["quiet-winter-adventures-yllas", "Quiet Winter Adventures: Forest Skiing, E-Bikes and Snowshoes", "Guided forest skiing, winter e-biking and snowshoe aurora hunting in the Ylläs fells", "Tour", "Snowshoe", "2.5–3 hrs", "Seasonal", 115, "From €115 (verify)"],
 ["yllas-ski-resort", "Ylläs Ski Resort (Lift Passes)", "Finland’s largest ski resort, with passes valid on both the Ylläsjärvi and Äkäslompolo sides", "Attraction", "Ylläs", "3 hrs–full day", "Season dates", 60, "Adult 1-day about €60 (verify)"],
 ["snowvillage-excursion-yllas", "Lapland Hotels SnowVillage from Ylläs", "Ice hotel and ice art in Lainio, 15 minutes by car from Ylläs", "Attraction", "Kittilä", "2.5–4.5 hrs", "25 Dec–4 Apr", 26, "Entrance adult about €26 (verify)"],
-["yllas-planning-guide", "Ylläs Planning Guide for Agents", "Getting there, seasons, villages and what to tell clients before booking", "Guide", "Ylläs", "Read before booking", "Reference", 0, "Information"]];
+["yllas-planning-guide", "Ylläs Planning Guide for Agents", "Getting there, seasons, villages and what to tell clients before booking", "Guide", "Ylläs", "Read before booking", "Reference", 0, "Information"],
+["husky-safaris-yllas", "Husky Safaris in Ylläs", "5 km husky experience and 10 km husky safari with Lapland Safaris, priced per private group", "Tour", "Sled_dog", "2.5–3 hrs", "1 Dec–5 Apr", 1660, "Private 5 km from €1,660 per group (verify)"],
+["reindeer-excursion-yllas", "Reindeer Excursion in Ylläs", "2.5-hour reindeer safari and farm visit, priced per person", "Tour", "Reindeer", "2.5 hrs", "1 Dec–5 Apr", 173, "Adult €173 (verify)"],
+["fishing-safaris-yllas", "Ice Fishing and Snowmobile Fishing Safaris in Ylläs", "2.5-hour ice fishing by bus and a 4.5-hour fishing experience by snowmobile", "Tour", "Ice_fishing", "2.5–4.5 hrs", "Seasonal", 74, "Ice fishing by bus adult €74 (verify)"],
+["snowshoe-aurora-hunting-yllas", "Snowshoe Safaris and Aurora Hunting in Ylläs", "White Silence snowshoe trip and 2.5-hour aurora hunting on snowshoes", "Tour", "Snowshoe", "2.5 hrs", "1 Dec–5 Apr", 91, "White Silence adult €91 (verify)"]];
 var cats=['All'].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}).sort()),cur='All',g=document.getElementById('g');
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 g.innerHTML=D.map(function(d){var ag=isAgent&&d[7]?'<div class="ag">Commission 10% · €'+Math.round(d[7]*RATE).toLocaleString('en-US')+'</div>':'';
